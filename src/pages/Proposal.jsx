@@ -1,72 +1,107 @@
 import { motion } from 'framer-motion'
-import { CheckCircle2, X } from 'lucide-react'
+import { CheckCircle2, X, Gift, Star } from 'lucide-react'
 
 const plans = [
+  {
+    id: 'promocional',
+    name: 'Promocional',
+    badge: 'VOCÊ GANHOU!',
+    headerGradient: 'linear-gradient(135deg, #C9A96E 0%, #D4AF37 100%)',
+    originalPrice: 400,
+    price: 0,
+    priceLabel: 'GRÁTIS',
+    isFree: true,
+    monthly: 0,
+    monthlyAfter: 29,
+    featured: false,
+    waMessage: 'Ol%C3%A1!%20Quero%20ativar%20meu%20site%20promocional%20gratuito%20que%20ganhei!',
+    features: [
+      'Site de página única (landing page)',
+      'Seções: Quem somos, Áreas de atuação e Contato',
+      'Design responsivo (celular, tablet e desktop)',
+      'Botão WhatsApp flutuante',
+      'Formulário de contato básico',
+      'Hospedagem inclusa (Vercel)',
+      'Certificado SSL (HTTPS)',
+    ],
+    notIncluded: ['Domínio personalizado (.adv.br)'],
+    maintenance: [
+      'Hospedagem',
+      'Suporte técnico básico',
+      '1 atualização de conteúdo por mês',
+    ],
+    note: 'Presente exclusivo. Seu escritório na internet sem nenhum custo no primeiro ano.',
+  },
   {
     id: 'essencial',
     name: 'Essencial',
     badge: 'Cartão de Visita Digital',
     headerColor: '#3A3A3A',
-    price: 490,
-    monthly: 39,
+    originalPrice: 690,
+    price: 290,
+    monthly: 0,
+    monthlyAfter: 59,
     featured: false,
-    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Essencial%20(R%24490).',
+    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Essencial%20(R%24290%20com%20o%20desconto%20promocional).',
     features: [
-      'Site institucional de página única',
-      'Seções: Quem somos, Áreas de atuação e Contato',
-      'Design responsivo (celular, tablet e desktop)',
-      'Botão WhatsApp flutuante',
-      'Formulário de contato básico',
-      'Hospedagem inclusa',
-      'Certificado SSL (HTTPS)',
+      'Tudo do Promocional',
+      'Design mais refinado com animações básicas',
+      'Integração com Instagram',
+      'Página de contato dedicada',
     ],
+    notIncluded: ['Domínio personalizado (.adv.br)'],
     maintenance: [
-      'Hospedagem e domínio',
-      'Suporte técnico básico',
-      '1 atualização de conteúdo por mês',
+      'Hospedagem',
+      'Suporte técnico',
+      'Até 2 atualizações de conteúdo por mês',
     ],
-    note: 'Ideal para quem está começando e precisa de presença digital imediata.',
+    note: 'Para quem quer um visual mais profissional mantendo o investimento enxuto.',
   },
   {
     id: 'profissional',
     name: 'Profissional',
-    badge: 'Recomendado',
+    badge: 'RECOMENDADO',
     headerColor: '#C9A96E',
-    price: 890,
-    monthly: 69,
+    originalPrice: 990,
+    price: 590,
+    monthly: 0,
+    monthlyAfter: 79,
     featured: true,
-    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Profissional%20(R%24890).',
+    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Profissional%20(R%24590%20com%20o%20desconto%20promocional).',
     features: [
-      'Tudo do Plano Essencial',
+      'Tudo do Essencial',
       'Site completo com 6 páginas dedicadas',
-      'Blog com artigos jurídicos (3 artigos iniciais inclusos)',
+      'Blog com artigos jurídicos (3 artigos iniciais)',
       'SEO otimizado para Google',
       'Animações e transições profissionais',
       'Página de equipe com perfis dos sócios',
-      'Formulário com seleção de área jurídica',
+      'Formulário avançado com seleção de área jurídica',
       'Design clássico-corporativo sob medida',
-      'Integração com Instagram',
+      'Domínio .adv.br incluso no 1º ano',
+      'Relatório mensal de visitas',
     ],
     maintenance: [
-      'Tudo do plano Essencial',
-      'Até 2 atualizações de conteúdo por mês',
+      'Tudo do Essencial',
       '1 artigo publicado no blog por mês',
       'Relatório mensal de visitas e métricas',
       'Monitoramento de performance',
+      'Domínio incluso',
     ],
-    note: 'O equilíbrio perfeito entre presença profissional e investimento inteligente.',
+    note: 'O equilíbrio perfeito. Presença completa, profissional e pronta para crescer.',
   },
   {
     id: 'completo',
     name: 'Completo',
     badge: 'Gestão Digital',
     headerColor: '#0A1628',
-    price: 1590,
-    monthly: 129,
+    originalPrice: 1890,
+    price: 1490,
+    monthly: 0,
+    monthlyAfter: 149,
     featured: false,
-    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Completo%20(R%241.590).',
+    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Completo%20(R%241.490%20com%20o%20desconto%20promocional).',
     features: [
-      'Tudo do Plano Profissional',
+      'Tudo do Profissional',
       'Área do Cliente com login seguro',
       'Painel de acompanhamento de processos',
       'Agendamento de consultas online',
@@ -75,49 +110,192 @@ const plans = [
       'Newsletter com captura de e-mail',
       'Painel administrativo para gestão',
       'Preparação para integração com ADVBOX / Astrea',
+      'Domínio .adv.br incluso no 1º ano',
     ],
     maintenance: [
-      'Tudo do plano Profissional',
+      'Tudo do Profissional',
       'Atualizações ilimitadas de conteúdo',
       'Até 4 artigos no blog por mês',
       'Gerenciamento da área do cliente',
       'Suporte prioritário via WhatsApp',
       'Backup semanal',
       'Otimização contínua de SEO',
+      'Domínio incluso',
     ],
-    note: 'Para quem quer transformar o site em ferramenta de gestão do escritório.',
+    note: 'Para quem quer o site como ferramenta de gestão completa do escritório.',
   },
 ]
 
 const tableRows = [
-  { feature: 'Site responsivo', essencial: true, profissional: true, completo: true },
-  { feature: 'WhatsApp flutuante', essencial: true, profissional: true, completo: true },
-  { feature: 'Formulário de contato', essencial: true, profissional: true, completo: true },
-  { feature: 'SSL / HTTPS', essencial: true, profissional: true, completo: true },
-  { feature: 'Hospedagem inclusa', essencial: true, profissional: true, completo: true },
-  { feature: 'Multi-página (6 páginas)', essencial: false, profissional: true, completo: true },
-  { feature: 'Blog com artigos', essencial: false, profissional: true, completo: true },
-  { feature: 'SEO otimizado', essencial: false, profissional: true, completo: true },
-  { feature: 'Animações profissionais', essencial: false, profissional: true, completo: true },
-  { feature: 'Página da equipe', essencial: false, profissional: true, completo: true },
-  { feature: 'Relatório de métricas', essencial: false, profissional: true, completo: true },
-  { feature: 'Área do Cliente', essencial: false, profissional: false, completo: true },
-  { feature: 'Acompanhamento de processos', essencial: false, profissional: false, completo: true },
-  { feature: 'Agendamento online', essencial: false, profissional: false, completo: true },
-  { feature: 'FAQ dinâmico', essencial: false, profissional: false, completo: true },
-  { feature: 'Newsletter', essencial: false, profissional: false, completo: true },
-  { feature: 'Painel administrativo', essencial: false, profissional: false, completo: true },
+  { feature: 'Site responsivo', promo: true, essencial: true, profissional: true, completo: true },
+  { feature: 'WhatsApp flutuante', promo: true, essencial: true, profissional: true, completo: true },
+  { feature: 'Formulário de contato', promo: true, essencial: true, profissional: true, completo: true },
+  { feature: 'SSL / HTTPS', promo: true, essencial: true, profissional: true, completo: true },
+  { feature: 'Hospedagem inclusa', promo: true, essencial: true, profissional: true, completo: true },
+  { feature: 'Domínio .adv.br', promo: false, essencial: false, profissional: true, completo: true },
+  { feature: 'Multi-página (6 páginas)', promo: false, essencial: false, profissional: true, completo: true },
+  { feature: 'Blog com artigos', promo: false, essencial: false, profissional: true, completo: true },
+  { feature: 'SEO otimizado', promo: false, essencial: false, profissional: true, completo: true },
+  { feature: 'Animações profissionais', promo: false, essencial: true, profissional: true, completo: true },
+  { feature: 'Página da equipe', promo: false, essencial: false, profissional: true, completo: true },
+  { feature: 'Relatório de métricas', promo: false, essencial: false, profissional: true, completo: true },
+  { feature: 'Área do Cliente', promo: false, essencial: false, profissional: false, completo: true },
+  { feature: 'Acompanhamento de processos', promo: false, essencial: false, profissional: false, completo: true },
+  { feature: 'Agendamento online', promo: false, essencial: false, profissional: false, completo: true },
+  { feature: 'FAQ dinâmico', promo: false, essencial: false, profissional: false, completo: true },
+  { feature: 'Newsletter', promo: false, essencial: false, profissional: false, completo: true },
+  { feature: 'Painel administrativo', promo: false, essencial: false, profissional: false, completo: true },
 ]
 
-function formatPrice(n) {
+function fmt(n) {
   return n.toLocaleString('pt-BR')
+}
+
+function Check() {
+  return <CheckCircle2 size={16} className="text-gold mx-auto" />
+}
+function Cross() {
+  return <X size={14} className="text-gray-300 mx-auto" />
+}
+
+function PlanCard({ plan, index }) {
+  const headerStyle = plan.headerGradient
+    ? { background: plan.headerGradient }
+    : { backgroundColor: plan.headerColor }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className={`relative rounded-lg overflow-hidden bg-white flex flex-col transition-all duration-300 ${
+        plan.featured
+          ? 'ring-2 ring-gold shadow-2xl md:-translate-y-6 scale-[1.02]'
+          : 'shadow-md hover:-translate-y-1'
+      }`}
+    >
+      {/* Header */}
+      <div className="px-5 pt-7 pb-5 text-center" style={headerStyle}>
+        <span className="inline-block font-inter text-xs font-bold uppercase tracking-widest bg-white/25 text-white px-3 py-1 rounded-full mb-3">
+          {plan.badge}
+        </span>
+        <h2 className="font-playfair font-bold text-white text-xl">
+          Plano {plan.name}
+        </h2>
+        {plan.isFree && (
+          <div className="mt-2 inline-flex items-center gap-1.5 bg-white/20 text-white text-xs font-inter font-semibold px-2 py-1 rounded-full">
+            <Gift size={12} />
+            Presente exclusivo
+          </div>
+        )}
+      </div>
+
+      {/* Price block */}
+      <div className="px-5 py-5 text-center border-b border-gray-100">
+        {/* Discount badge */}
+        {!plan.isFree && (
+          <span className="inline-block font-inter text-xs font-bold text-white bg-red-500 px-2 py-0.5 rounded mb-2">
+            -R$ 400
+          </span>
+        )}
+        {/* Original price struck */}
+        <p className="font-inter text-gray-400 text-sm line-through mb-1">
+          R$ {fmt(plan.originalPrice)}
+        </p>
+        {/* Final price */}
+        {plan.isFree ? (
+          <p className="font-playfair font-bold text-4xl text-gold">GRÁTIS</p>
+        ) : (
+          <p className="font-playfair font-bold text-black text-4xl">
+            R$&nbsp;{fmt(plan.price)}
+          </p>
+        )}
+        {/* Monthly */}
+        <p className="font-inter text-sm text-emerald-600 font-semibold mt-2">
+          + R$ 0/mês <span className="font-normal text-gray-light">no 1º ano</span>
+        </p>
+        <p className="font-inter text-xs text-gray-400 mt-1">
+          Após 1º ano: R$ {plan.monthlyAfter}/mês
+        </p>
+      </div>
+
+      {/* Features */}
+      <div className="px-5 py-5 flex-1 flex flex-col gap-4">
+        <div>
+          <p className="font-inter font-semibold text-black text-xs uppercase tracking-wider mb-2.5">
+            Inclui
+          </p>
+          <ul className="space-y-2">
+            {plan.features.map((f) => (
+              <li key={f} className="flex items-start gap-2">
+                <CheckCircle2 size={14} className="text-gold shrink-0 mt-0.5" />
+                <span className="font-inter text-graphite text-xs leading-snug">{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {plan.notIncluded?.length > 0 && (
+          <div>
+            <p className="font-inter font-semibold text-gray-400 text-xs uppercase tracking-wider mb-2">
+              Não inclui
+            </p>
+            <ul className="space-y-1.5">
+              {plan.notIncluded.map((f) => (
+                <li key={f} className="flex items-start gap-2">
+                  <X size={13} className="text-gray-300 shrink-0 mt-0.5" />
+                  <span className="font-inter text-gray-400 text-xs leading-snug">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div>
+          <p className="font-inter font-semibold text-black text-xs uppercase tracking-wider mb-2.5">
+            Manutenção {plan.isFree ? '(após 1º ano)' : '(após 1º ano)'}
+          </p>
+          <ul className="space-y-1.5">
+            {plan.maintenance.map((m) => (
+              <li key={m} className="flex items-start gap-2">
+                <CheckCircle2 size={13} className="text-gray-light shrink-0 mt-0.5" />
+                <span className="font-inter text-gray-light text-xs leading-snug">{m}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="font-inter text-gray-light text-xs italic border-t border-gray-100 pt-3 mt-auto">
+          {plan.note}
+        </p>
+      </div>
+
+      {/* CTA */}
+      <div className="px-5 pb-6">
+        <a
+          href={`https://wa.me/5531984995968?text=${plan.waMessage}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex items-center justify-center w-full py-3 rounded-sm font-inter font-semibold text-sm uppercase tracking-wider transition-all duration-200 hover:brightness-90 ${
+            plan.featured
+              ? 'bg-gold text-navy'
+              : plan.isFree
+              ? 'bg-gradient-to-r from-[#C9A96E] to-[#D4AF37] text-white'
+              : 'bg-navy text-white'
+          }`}
+        >
+          {plan.isFree ? '🎁 Quero este plano!' : 'Escolher este plano'}
+        </a>
+      </div>
+    </motion.div>
+  )
 }
 
 export default function Proposal() {
   return (
     <div className="min-h-screen bg-off-white font-inter">
       {/* Header */}
-      <header className="bg-navy text-white py-16 px-4 text-center">
+      <header className="bg-navy text-white py-14 px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -127,110 +305,78 @@ export default function Proposal() {
             Henrique e Castro Advogados
           </p>
           <h1 className="font-playfair font-bold text-3xl md:text-4xl text-white mb-4">
-            Proposta de Serviços Digitais
+            Proposta Exclusiva de Serviços Digitais
           </h1>
-          <p className="font-inter text-gray-300 text-base max-w-xl mx-auto leading-relaxed">
-            Preparamos três opções para que você escolha a que melhor se encaixa no momento atual
-            do escritório. Cada plano foi pensado para crescer junto com o negócio de vocês.
+          <p className="font-inter text-gray-300 text-base max-w-lg mx-auto leading-relaxed">
+            Preparamos uma proposta especial para o escritório Henrique e Castro Advogados.
           </p>
         </motion.div>
       </header>
 
-      {/* Plans */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+      {/* Promo Banner */}
+      <section className="max-w-4xl mx-auto px-4 py-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="relative rounded-xl overflow-hidden border-2 border-gold shadow-xl"
+          style={{ background: 'linear-gradient(135deg, #C9A96E 0%, #D4AF37 50%, #C9A96E 100%)' }}
+        >
+          {/* Dashed inner border for voucher effect */}
+          <div className="m-1 rounded-lg border-2 border-dashed border-white/40 p-8 text-center relative">
+            {/* Seal */}
+            <div className="absolute top-4 right-4 w-16 h-16 bg-white rounded-full flex flex-col items-center justify-center shadow-md">
+              <span className="font-inter font-black text-[#C9A96E] text-xs leading-none">EX</span>
+              <span className="font-inter font-black text-[#C9A96E] text-xs leading-none">CLU</span>
+              <span className="font-inter font-black text-[#C9A96E] text-[9px] leading-none">SIVO</span>
+            </div>
+
+            <Star size={32} className="text-white mx-auto mb-3 fill-white" />
+            <p className="font-inter font-bold text-white text-xs uppercase tracking-[0.3em] mb-1">
+              Promoção Exclusiva
+            </p>
+            <h2 className="font-playfair font-bold text-white text-3xl md:text-4xl mb-4">
+              Você foi selecionado!
+            </h2>
+
+            {/* R$ 400 OFF highlight */}
+            <div className="inline-flex flex-col items-center bg-white rounded-xl px-8 py-4 mb-5 shadow-lg">
+              <span className="font-inter text-[#C9A96E] text-xs font-bold uppercase tracking-widest">Desconto de</span>
+              <span className="font-playfair font-black text-[#0A1628] text-5xl md:text-6xl leading-none">R$ 400</span>
+              <span className="font-inter font-bold text-[#C9A96E] text-sm uppercase tracking-widest">OFF</span>
+            </div>
+
+            <p className="font-inter text-white text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-4">
+              Parabéns! Você ganhou{' '}
+              <strong>R$ 400,00 de desconto na implantação</strong> do seu site.
+              Além disso, <strong>não haverá cobrança de mensalidade durante o primeiro ano.</strong>
+            </p>
+            <p className="font-inter text-white/75 text-xs italic">
+              Esta promoção é exclusiva e não está disponível para outros clientes. Válida apenas para esta proposta.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Plans grid */}
+      <section className="max-w-7xl mx-auto px-4 pb-8">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-center font-inter text-gray-light text-sm mb-10"
+        >
+          Escolha o plano ideal para o escritório
+        </motion.p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 items-start">
           {plans.map((plan, i) => (
-            <motion.div
-              key={plan.id}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className={`relative rounded-lg overflow-hidden bg-white shadow-md flex flex-col transition-transform duration-300 ${
-                plan.featured
-                  ? 'md:-translate-y-4 ring-2 ring-gold shadow-xl'
-                  : 'hover:-translate-y-1'
-              }`}
-            >
-              {/* Card header */}
-              <div
-                className="px-6 pt-8 pb-6 text-center"
-                style={{ backgroundColor: plan.headerColor }}
-              >
-                <span className="inline-block font-inter text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full mb-3">
-                  {plan.badge}
-                </span>
-                <h2 className="font-playfair font-bold text-white text-2xl mb-1">
-                  Plano {plan.name}
-                </h2>
-              </div>
-
-              {/* Price */}
-              <div className="px-6 py-6 text-center border-b border-gray-100">
-                <p className="font-inter text-gray-light text-xs uppercase tracking-wider mb-1">
-                  Implantação
-                </p>
-                <p className="font-playfair font-bold text-black text-4xl">
-                  R$&nbsp;{formatPrice(plan.price)}
-                </p>
-                <p className="font-inter text-gray-light text-sm mt-2">
-                  + R$&nbsp;{plan.monthly}
-                  <span className="text-xs">/mês de manutenção</span>
-                </p>
-              </div>
-
-              {/* Features */}
-              <div className="px-6 py-6 flex-1">
-                <p className="font-inter font-semibold text-black text-xs uppercase tracking-wider mb-3">
-                  Inclui
-                </p>
-                <ul className="space-y-2.5 mb-6">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={15} className="text-gold shrink-0 mt-0.5" />
-                      <span className="font-inter text-graphite text-sm leading-snug">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="font-inter font-semibold text-black text-xs uppercase tracking-wider mb-3">
-                  Manutenção mensal inclui
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {plan.maintenance.map((m) => (
-                    <li key={m} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={15} className="text-gray-light shrink-0 mt-0.5" />
-                      <span className="font-inter text-gray-light text-sm leading-snug">{m}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="font-inter text-gray-light text-xs italic leading-relaxed border-t border-gray-100 pt-4">
-                  {plan.note}
-                </p>
-              </div>
-
-              {/* CTA */}
-              <div className="px-6 pb-6">
-                <a
-                  href={`https://wa.me/5531984995968?text=${plan.waMessage}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center w-full py-3 rounded-sm font-inter font-semibold text-sm uppercase tracking-wider transition-all duration-200 hover:brightness-90 ${
-                    plan.featured
-                      ? 'bg-gold text-navy'
-                      : 'bg-navy text-white'
-                  }`}
-                >
-                  Escolher este plano
-                </a>
-              </div>
-            </motion.div>
+            <PlanCard key={plan.id} plan={plan} index={i} />
           ))}
         </div>
       </section>
 
       {/* Comparison table */}
-      <section className="max-w-5xl mx-auto px-4 pb-16">
+      <section className="max-w-5xl mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -241,59 +387,70 @@ export default function Proposal() {
             Comparativo completo
           </h2>
           <div className="overflow-x-auto rounded-lg shadow-sm">
-            <table className="w-full bg-white text-sm">
+            <table className="w-full bg-white text-sm min-w-[600px]">
               <thead>
                 <tr className="bg-navy text-white">
-                  <th className="text-left px-5 py-4 font-inter font-semibold text-xs uppercase tracking-wider w-1/2">
+                  <th className="text-left px-4 py-3 font-inter font-semibold text-xs uppercase tracking-wider w-2/5">
                     Funcionalidade
                   </th>
-                  <th className="text-center px-4 py-4 font-inter font-semibold text-xs uppercase tracking-wider">
+                  <th className="text-center px-3 py-3 font-inter font-semibold text-xs uppercase tracking-wider text-gold">
+                    Promo
+                  </th>
+                  <th className="text-center px-3 py-3 font-inter font-semibold text-xs uppercase tracking-wider">
                     Essencial
                   </th>
-                  <th className="text-center px-4 py-4 font-inter font-semibold text-xs uppercase tracking-wider text-gold">
+                  <th className="text-center px-3 py-3 font-inter font-semibold text-xs uppercase tracking-wider text-gold">
                     Profissional
                   </th>
-                  <th className="text-center px-4 py-4 font-inter font-semibold text-xs uppercase tracking-wider">
+                  <th className="text-center px-3 py-3 font-inter font-semibold text-xs uppercase tracking-wider">
                     Completo
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {tableRows.map((row, i) => (
-                  <tr
-                    key={row.feature}
-                    className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
-                  >
-                    <td className="px-5 py-3 font-inter text-graphite text-sm">{row.feature}</td>
-                    <td className="text-center px-4 py-3">
-                      {row.essencial
-                        ? <CheckCircle2 size={16} className="text-gold mx-auto" />
-                        : <X size={14} className="text-gray-300 mx-auto" />}
-                    </td>
-                    <td className="text-center px-4 py-3 bg-gold/5">
-                      {row.profissional
-                        ? <CheckCircle2 size={16} className="text-gold mx-auto" />
-                        : <X size={14} className="text-gray-300 mx-auto" />}
-                    </td>
-                    <td className="text-center px-4 py-3">
-                      {row.completo
-                        ? <CheckCircle2 size={16} className="text-gold mx-auto" />
-                        : <X size={14} className="text-gray-300 mx-auto" />}
-                    </td>
+                  <tr key={row.feature} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="px-4 py-2.5 font-inter text-graphite text-xs">{row.feature}</td>
+                    <td className="text-center px-3 py-2.5 bg-gold/5">{row.promo ? <Check /> : <Cross />}</td>
+                    <td className="text-center px-3 py-2.5">{row.essencial ? <Check /> : <Cross />}</td>
+                    <td className="text-center px-3 py-2.5 bg-gold/5">{row.profissional ? <Check /> : <Cross />}</td>
+                    <td className="text-center px-3 py-2.5">{row.completo ? <Check /> : <Cross />}</td>
                   </tr>
                 ))}
-                {/* Price row */}
-                <tr className="bg-navy text-white font-semibold">
-                  <td className="px-5 py-4 font-inter text-sm">Implantação</td>
-                  <td className="text-center px-4 py-4 font-inter text-sm">R$ 490</td>
-                  <td className="text-center px-4 py-4 font-inter text-sm text-gold">R$ 890</td>
-                  <td className="text-center px-4 py-4 font-inter text-sm">R$ 1.590</td>
+
+                {/* Price rows */}
+                <tr className="bg-navy text-white">
+                  <td className="px-4 py-3 font-inter font-semibold text-xs">Implantação</td>
+                  <td className="text-center px-3 py-3 text-xs">
+                    <span className="line-through text-white/50 block">R$ 400</span>
+                    <span className="font-bold text-gold">GRÁTIS</span>
+                  </td>
+                  <td className="text-center px-3 py-3 text-xs">
+                    <span className="line-through text-white/50 block">R$ 690</span>
+                    <span className="font-bold">R$ 290</span>
+                  </td>
+                  <td className="text-center px-3 py-3 text-xs bg-gold/10">
+                    <span className="line-through text-white/50 block">R$ 990</span>
+                    <span className="font-bold text-gold">R$ 590</span>
+                  </td>
+                  <td className="text-center px-3 py-3 text-xs">
+                    <span className="line-through text-white/50 block">R$ 1.890</span>
+                    <span className="font-bold">R$ 1.490</span>
+                  </td>
                 </tr>
                 <tr className="bg-navy-light text-white">
-                  <td className="px-5 py-4 font-inter text-sm font-semibold">Manutenção mensal</td>
-                  <td className="text-center px-4 py-4 font-inter text-sm">R$ 39/mês</td>
-                  <td className="text-center px-4 py-4 font-inter text-sm text-gold font-semibold">R$ 69/mês</td>
-                  <td className="text-center px-4 py-4 font-inter text-sm">R$ 129/mês</td>
+                  <td className="px-4 py-2.5 font-inter text-xs font-semibold">1º ano</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês</td>
+                </tr>
+                <tr className="bg-navy/80 text-white/70">
+                  <td className="px-4 py-2.5 font-inter text-xs">Após 1º ano</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs">R$ 29/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs">R$ 59/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs text-gold">R$ 79/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs">R$ 149/mês</td>
                 </tr>
               </tbody>
             </table>
@@ -313,9 +470,12 @@ export default function Proposal() {
           <h2 className="font-playfair font-bold text-white text-3xl mb-4">
             Pronto para dar o próximo passo?
           </h2>
-          <p className="font-inter text-gray-300 text-base leading-relaxed mb-8">
+          <p className="font-inter text-gray-300 text-base leading-relaxed mb-2">
             Escolha o plano ideal e vamos começar. Todos os planos podem ser ajustados
             conforme a necessidade do escritório.
+          </p>
+          <p className="font-inter text-emerald-400 text-sm font-semibold mb-8">
+            Primeiro ano de manutenção 100% gratuito em todos os planos.
           </p>
           <a
             href="https://wa.me/5531984995968"
@@ -329,18 +489,18 @@ export default function Proposal() {
             Falar pelo WhatsApp
           </a>
           <p className="font-inter text-gray-500 text-xs mt-5">
-            Proposta válida por 15 dias. Pagamento em até 3x sem juros.
+            Promoção exclusiva válida por 7 dias. Pagamento em até 3x sem juros.
           </p>
         </motion.div>
       </section>
 
-      {/* Footer simplificado */}
+      {/* Footer */}
       <footer className="bg-black py-6 px-4 text-center">
         <p className="font-inter text-gray-500 text-sm">
           Henrique e Castro Advogados × TUCtech
         </p>
         <p className="font-inter text-gray-600 text-xs mt-1">
-          Proposta elaborada em junho de 2026
+          Proposta exclusiva elaborada em junho de 2026
         </p>
       </footer>
     </div>

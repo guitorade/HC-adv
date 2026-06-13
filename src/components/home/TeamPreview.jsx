@@ -30,10 +30,19 @@ export default function TeamPreview() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
-              {/* Avatar placeholder */}
-              <div className="w-20 h-20 shrink-0 rounded-full bg-navy-light flex items-center justify-center">
-                <User size={36} className="text-gold/50" />
-              </div>
+              {/* Avatar */}
+              {member.photo ? (
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="w-20 h-20 shrink-0 rounded-full object-cover border-2 border-gold/30"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="w-20 h-20 shrink-0 rounded-full bg-navy-light flex items-center justify-center">
+                  <User size={36} className="text-gold/50" />
+                </div>
+              )}
               <div>
                 <h3 className="font-playfair font-bold text-black text-lg mb-1">{member.name}</h3>
                 <p className="font-inter text-gold text-sm font-semibold mb-1">{member.role}</p>

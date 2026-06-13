@@ -61,9 +61,18 @@ export default function Team() {
               >
                 {/* Photo */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-48 h-48 rounded-full bg-navy-light flex items-center justify-center mb-5 border-4 border-gold/20">
-                    <User size={64} className="text-gold/40" />
-                  </div>
+                  {member.photo ? (
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="w-48 h-48 rounded-full object-cover mb-5 border-4 border-gold/20"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-48 h-48 rounded-full bg-navy-light flex items-center justify-center mb-5 border-4 border-gold/20">
+                      <User size={64} className="text-gold/40" />
+                    </div>
+                  )}
                   <h2 className="font-playfair font-bold text-black text-xl mb-1">{member.name}</h2>
                   <p className="font-inter font-semibold text-gold text-sm mb-1">{member.role}</p>
                   <p className="font-inter text-gray-light text-xs mb-4">{member.oab}</p>
