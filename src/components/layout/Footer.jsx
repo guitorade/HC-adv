@@ -62,7 +62,7 @@ export default function Footer() {
               Áreas de Atuação
             </h4>
             <nav className="flex flex-col gap-2">
-              {['Tributário', 'Empresarial', 'Penal', 'Agronegócios'].map((area) => (
+              {['Tributário', 'Empresarial', 'Agronegócio', 'Penal', 'Penal Econômico'].map((area) => (
                 <Link
                   key={area}
                   to="/areas-de-atuacao"
@@ -90,11 +90,11 @@ export default function Footer() {
                 (31) 98499-5968
               </a>
               <a
-                href="mailto:advthaleshenrique@gmail.com"
+                href="mailto:henriqueecastroadvogados@gmail.com"
                 className="flex items-center gap-3 font-inter text-sm text-gray-400 hover:text-gold transition-colors"
               >
                 <Mail size={16} className="text-gold shrink-0" />
-                advthaleshenrique@gmail.com
+                henriqueecastroadvogados@gmail.com
               </a>
               <a
                 href="https://instagram.com/adv.thaleshenrique"

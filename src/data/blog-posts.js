@@ -152,7 +152,7 @@ A **Henrique e Castro Advogados** oferece assessoria completa na estruturação 
     id: 3,
     slug: 'agronegocio-e-direito-desafios-juridicos-2026',
     title: 'Agronegócio e Direito: Os Principais Desafios Jurídicos do Setor em 2026',
-    category: 'Agronegócios',
+    category: 'Agronegócio',
     date: '2026-04-18',
     author: 'Isabelle Castro',
     summary: 'Do impacto da Reforma Tributária aos contratos rurais e regularização fundiária — os principais pontos de atenção jurídica para produtores rurais e empresas do agro em 2026.',

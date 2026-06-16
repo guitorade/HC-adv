@@ -50,7 +50,7 @@ export default function Hero() {
           variants={item}
           className="font-inter text-gray-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
         >
-          Atuação especializada em Direito Tributário, Empresarial, Penal e Agronegócios
+          Atuação especializada em Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico
           em todo o território nacional.
         </motion.p>
 

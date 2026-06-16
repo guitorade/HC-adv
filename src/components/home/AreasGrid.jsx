@@ -1,11 +1,11 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Scale, Briefcase, Shield, Landmark, ArrowRight } from 'lucide-react'
+import { Scale, Briefcase, Shield, Landmark, Gavel, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SectionTitle from '../ui/SectionTitle'
 import { areas } from '../../data/areas'
 
-const icons = { Scale, Briefcase, Shield, Landmark }
+const icons = { Scale, Briefcase, Shield, Landmark, Gavel }
 
 export default function AreasGrid() {
   const ref = useRef(null)
@@ -28,12 +28,13 @@ export default function AreasGrid() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {areas.map((area, i) => {
             const Icon = icons[area.icon]
             return (
               <motion.div
                 key={area.id}
+                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}

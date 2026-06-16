@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Heart, Star, Users } from 'lucide-react'
+import { Shield, Target, Eye, Users } from 'lucide-react'
 import SectionTitle from '../components/ui/SectionTitle'
 import Button from '../components/ui/Button'
 
@@ -12,19 +12,24 @@ const pageVariants = {
 
 const values = [
   {
-    icon: Heart,
-    title: 'Ética',
-    desc: 'Integridade em todas as relações profissionais',
+    icon: Shield,
+    title: 'Excelência Técnica',
+    desc: 'Rigor jurídico e atualização constante para entregar as melhores soluções.',
   },
   {
-    icon: Star,
-    title: 'Excelência',
-    desc: 'Busca contínua pelo mais alto padrão de qualidade',
+    icon: Target,
+    title: 'Visão Estratégica',
+    desc: 'Antecipação de riscos e identificação de oportunidades para proteção dos seus interesses.',
+  },
+  {
+    icon: Eye,
+    title: 'Transparência',
+    desc: 'Comunicação clara e honesta em todas as etapas da relação profissional.',
   },
   {
     icon: Users,
-    title: 'Proximidade',
-    desc: 'Atendimento humanizado e acessível',
+    title: 'Compromisso',
+    desc: 'Atendimento personalizado e condução responsável de cada demanda.',
   },
 ]
 
@@ -33,9 +38,9 @@ export default function About() {
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4 }}>
       <Helmet>
         <title>O Escritório | Henrique e Castro Advogados</title>
-        <meta name="description" content="Conheça a Henrique e Castro Advogados. Compromisso com ética, excelência e resultados." />
+        <meta name="description" content="Advocacia moderna, estratégica e comprometida com a proteção dos interesses de seus clientes. Atuação em Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico." />
         <meta property="og:title" content="O Escritório | Henrique e Castro Advogados" />
-        <meta property="og:description" content="Conheça a Henrique e Castro Advogados. Compromisso com ética, excelência e resultados." />
+        <meta property="og:description" content="Advocacia moderna, estratégica e comprometida com a proteção dos interesses de seus clientes." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://henriquecastro.adv.br/sobre" />
       </Helmet>
@@ -54,27 +59,50 @@ export default function About() {
         </div>
       </section>
 
-      {/* História */}
+      {/* Sobre Nós */}
       <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle eyebrow="Nossa Trajetória" title="Nossa História" />
+          <SectionTitle eyebrow="Sobre Nós" title="Henrique e Castro Advogados" />
           <div className="mt-8 space-y-6 font-inter text-graphite text-base leading-relaxed">
             <p>
-              A Henrique e Castro Advogados nasceu da convergência de duas trajetórias complementares
-              no Direito. Unimos a expertise em Direito Tributário e Empresarial com a solidez na
-              atuação Penal e em Agronegócios para oferecer uma assessoria jurídica completa,
-              estratégica e personalizada.
+              O Henrique e Castro Advogados nasceu com o propósito de oferecer uma advocacia moderna, estratégica e comprometida com a proteção dos interesses de seus clientes em um ambiente jurídico cada vez mais complexo e desafiador.
             </p>
             <p>
-              Acreditamos que cada cliente é único e merece uma abordagem sob medida. Nosso
-              compromisso vai além da técnica jurídica — construímos relações de confiança
-              duradouras, pautadas pela ética, transparência e pela busca incansável pelos
-              melhores resultados.
+              Atuamos nas áreas de Direito Tributário, Empresarial, Agronegócio e Penal, prestando assessoria jurídica a empresários, produtores rurais, empresas e pessoas físicas que buscam não apenas soluções para conflitos já existentes, mas também segurança para tomar decisões e construir o futuro com confiança e com proteção.
             </p>
             <p>
-              Atuando 100% de forma digital, estamos presentes em todo o território nacional,
-              oferecendo a mesma qualidade de atendimento independente da localização do cliente.
-              A tecnologia nos permite ser ágeis, eficientes e sempre acessíveis.
+              Combinamos conhecimento técnico, visão multidisciplinar e atuação personalizada para desenvolver soluções jurídicas alinhadas às particularidades de cada cliente e à realidade de seus negócios. Entendemos que questões jurídicas frequentemente envolvem patrimônio, reputação, liberdade e a continuidade de projetos construídos ao longo de anos de dedicação, suor e trabalho.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Bloco de destaque */}
+      <section className="bg-navy py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center"
+          >
+            <blockquote className="font-playfair text-white text-lg md:text-xl leading-relaxed italic">
+              "Compreendemos a advocacia como uma atividade essencialmente estratégica, voltada não apenas à resolução de conflitos, mas também à antecipação de riscos, proteção de interesses e identificação de oportunidades capazes de fortalecer a segurança jurídica, preservar patrimônios e proporcionar maior estabilidade para a tomada de decisões em cenários de elevada complexidade."
+            </blockquote>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Continuação do texto */}
+      <section className="bg-white py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 font-inter text-graphite text-base leading-relaxed">
+            <p>
+              Nossa atuação é pautada pela excelência técnica, ética profissional, transparência e compromisso com resultados, sempre buscando oferecer um atendimento personalizado e uma condução responsável de cada demanda confiada ao escritório.
+            </p>
+            <p>
+              Mais do que prestar serviços jurídicos, buscamos construir relações de confiança duradouras, baseadas na credibilidade, na proximidade e na defesa firme dos interesses de nossos clientes.
             </p>
           </div>
         </div>
@@ -84,9 +112,9 @@ export default function About() {
       <section className="bg-off-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <SectionTitle title="Nossos Valores" center />
+            <SectionTitle title="Nossos Pilares" center />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ icon: Icon, title, desc }, i) => (
               <motion.div
                 key={title}
@@ -104,24 +132,6 @@ export default function About() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Missão */}
-      <section className="bg-navy py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold mb-4">Nossa Missão</p>
-            <blockquote className="font-playfair text-white text-xl md:text-2xl leading-relaxed italic">
-              "Prestar assessoria jurídica de excelência, contribuindo para a segurança e o crescimento
-              sustentável dos negócios de nossos clientes, com atuação ética, estratégica e personalizada."
-            </blockquote>
-          </motion.div>
         </div>
       </section>
 

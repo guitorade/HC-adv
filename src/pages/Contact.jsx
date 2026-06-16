@@ -104,7 +104,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="mailto:advthaleshenrique@gmail.com"
+                  href="mailto:henriqueecastroadvogados@gmail.com"
                   className="flex items-start gap-4 group"
                 >
                   <div className="w-10 h-10 bg-navy rounded-sm flex items-center justify-center shrink-0 group-hover:bg-gold transition-colors">
@@ -112,7 +112,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-inter font-semibold text-black text-sm">E-mail</p>
-                    <p className="font-inter text-graphite text-sm group-hover:text-gold transition-colors">advthaleshenrique@gmail.com</p>
+                    <p className="font-inter text-graphite text-sm group-hover:text-gold transition-colors">henriqueecastroadvogados@gmail.com</p>
                   </div>
                 </a>
 
@@ -244,8 +244,9 @@ export default function Contact() {
                       <option value="">Selecione uma área</option>
                       <option value="Tributário">Tributário</option>
                       <option value="Empresarial">Empresarial</option>
+                      <option value="Agronegócio">Agronegócio</option>
                       <option value="Penal">Penal</option>
-                      <option value="Agronegócios">Agronegócios</option>
+                      <option value="Penal Econômico e Empresarial">Penal Econômico e Empresarial</option>
                       <option value="Outro">Outro</option>
                     </select>
                   </div>

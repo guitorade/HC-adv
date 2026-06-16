@@ -10,7 +10,8 @@ const categoryColors = {
   Tributário: 'bg-blue-100 text-blue-800',
   Empresarial: 'bg-emerald-100 text-emerald-800',
   Penal: 'bg-red-100 text-red-800',
-  Agronegócios: 'bg-amber-100 text-amber-800',
+  Agronegócio: 'bg-amber-100 text-amber-800',
+  'Penal Econômico': 'bg-orange-100 text-orange-800',
 }
 
 function formatDate(dateStr) {

@@ -14,9 +14,9 @@ export default function Blog() {
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4 }}>
       <Helmet>
         <title>Blog | Henrique e Castro Advogados</title>
-        <meta name="description" content="Artigos e conteúdos sobre Direito Tributário, Empresarial, Penal e Agronegócios." />
+        <meta name="description" content="Artigos e conteúdos sobre Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico." />
         <meta property="og:title" content="Blog | Henrique e Castro Advogados" />
-        <meta property="og:description" content="Artigos e conteúdos sobre Direito Tributário, Empresarial, Penal e Agronegócios." />
+        <meta property="og:description" content="Artigos e conteúdos sobre Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://henriquecastro.adv.br/blog" />
       </Helmet>

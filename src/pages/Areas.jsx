@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Scale, Briefcase, Shield, Landmark, CheckCircle2 } from 'lucide-react'
+import { Scale, Briefcase, Shield, Landmark, Gavel, CheckCircle2 } from 'lucide-react'
 import { areas } from '../data/areas'
 import Button from '../components/ui/Button'
 
@@ -10,16 +10,16 @@ const pageVariants = {
   exit: { opacity: 0 },
 }
 
-const icons = { Scale, Briefcase, Shield, Landmark }
+const icons = { Scale, Briefcase, Shield, Landmark, Gavel }
 
 export default function Areas() {
   return (
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4 }}>
       <Helmet>
         <title>Áreas de Atuação | Henrique e Castro Advogados</title>
-        <meta name="description" content="Tributário, Empresarial, Penal e Agronegócios. Assessoria jurídica especializada." />
+        <meta name="description" content="Tributário, Empresarial, Agronegócio, Penal e Penal Econômico. Assessoria jurídica especializada para pessoas e negócios." />
         <meta property="og:title" content="Áreas de Atuação | Henrique e Castro Advogados" />
-        <meta property="og:description" content="Tributário, Empresarial, Penal e Agronegócios. Assessoria jurídica especializada." />
+        <meta property="og:description" content="Tributário, Empresarial, Agronegócio, Penal e Penal Econômico. Assessoria jurídica especializada." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://henriquecastro.adv.br/areas-de-atuacao" />
       </Helmet>
@@ -47,22 +47,31 @@ export default function Areas() {
             return (
               <motion.section
                 key={area.id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${isEven ? '' : 'lg:flex-row-reverse'}`}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7 }}
               >
                 {/* Icon + title block */}
-                <div className={`${!isEven ? 'lg:order-2' : ''}`}>
+                <div className={!isEven ? 'lg:order-2' : ''}>
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-navy rounded-sm mb-6">
                     {Icon && <Icon size={30} className="text-gold" />}
                   </div>
                   <h2 className="font-playfair font-bold text-black text-3xl mb-4">{area.title}</h2>
-                  <p className="font-inter text-graphite text-base leading-relaxed mb-6">{area.description}</p>
+                  <div className="space-y-4 font-inter text-graphite text-base leading-relaxed mb-6">
+                    {area.description.split('\n\n').map((paragraph, pi) => (
+                      <p key={pi}>{paragraph}</p>
+                    ))}
+                  </div>
+                  {area.tagline && (
+                    <p className="font-playfair italic text-gold text-lg mb-6">
+                      {area.tagline}
+                    </p>
+                  )}
                   <div className="h-px bg-gold/30 mb-6" />
                   <p className="font-inter font-semibold text-black text-sm uppercase tracking-wider mb-4">
-                    Serviços prestados
+                    Principais áreas de atuação
                   </p>
                   <ul className="space-y-3">
                     {area.services.map((service) => (
@@ -77,9 +86,9 @@ export default function Areas() {
                 {/* Decorative panel */}
                 <div className={`${!isEven ? 'lg:order-1' : ''} hidden lg:block`}>
                   <div className="relative h-80 bg-navy rounded-sm flex items-center justify-center overflow-hidden">
-                    <div className="text-center">
+                    <div className="text-center px-4">
                       {Icon && <Icon size={64} className="text-gold/20 mx-auto mb-4" />}
-                      <p className="font-playfair text-white/10 text-5xl font-bold">{area.title}</p>
+                      <p className="font-playfair text-white/10 text-4xl font-bold leading-tight">{area.title}</p>
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gold/40" />
                   </div>
