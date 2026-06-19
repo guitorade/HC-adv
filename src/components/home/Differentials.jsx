@@ -1,22 +1,22 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { MapPin, Monitor, Users } from 'lucide-react'
+import { MapPin, Fingerprint, Layers } from 'lucide-react'
 
 const items = [
   {
     icon: MapPin,
-    title: 'Atuação Nacional',
-    desc: 'Presença em todo o território brasileiro',
+    title: 'Atendimento Nacional',
+    desc: 'Atuação em todo o território brasileiro, com atendimento presencial e digital, sem barreiras geográficas.',
   },
   {
-    icon: Monitor,
-    title: '100% Digital',
-    desc: 'Atendimento ágil e sem barreiras geográficas',
+    icon: Fingerprint,
+    title: 'Soluções Personalizadas',
+    desc: 'Cada cliente possui necessidades únicas. Nossas estratégias são desenvolvidas de forma individualizada, considerando o contexto, os objetivos e os riscos específicos de cada situação.',
   },
   {
-    icon: Users,
-    title: 'Atendimento Personalizado',
-    desc: 'Cada cliente, uma estratégia única',
+    icon: Layers,
+    title: 'Visão Multidisciplinar',
+    desc: 'Integramos diferentes áreas do Direito para oferecer soluções completas, coerentes e estrategicamente alinhadas às demandas de cada caso.',
   },
 ]
 

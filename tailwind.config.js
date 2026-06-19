@@ -16,7 +16,7 @@ export default {
         black: '#111111',
       },
       fontFamily: {
-        playfair: ['"Playfair Display"', 'serif'],
+        playfair: ['"Cormorant Garamond"', 'serif'],
         inter: ['Inter', 'sans-serif'],
       },
       keyframes: {

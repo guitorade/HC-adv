@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { MessageCircle, Mail, Clock, MapPin, CheckCircle2 } from 'lucide-react'
+import { MessageCircle, Mail, CheckCircle2 } from 'lucide-react'
 
 function InstagramIcon({ size = 16, className = '' }) {
   return (
@@ -19,7 +19,6 @@ const pageVariants = {
   exit: { opacity: 0 },
 }
 
-// IMPORTANTE: Substituir pelo ID real do Formspree do cliente
 const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || 'xpwrjqzk'
 
 export default function Contact() {
@@ -78,14 +77,15 @@ export default function Contact() {
       {/* Content */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Left — Info */}
             <motion.div
+              className="lg:col-span-2"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-playfair font-bold text-black text-2xl mb-8">Informações de contato</h2>
+              <h2 className="font-playfair font-bold text-black text-2xl mb-8">Canais de Atendimento</h2>
 
               <div className="space-y-6">
                 <a
@@ -117,7 +117,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="https://instagram.com/adv.thaleshenrique"
+                  href="https://instagram.com/henriqueecastroadvogados"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 group"
@@ -127,29 +127,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-inter font-semibold text-black text-sm">Instagram</p>
-                    <p className="font-inter text-graphite text-sm group-hover:text-gold transition-colors">@adv.thaleshenrique</p>
+                    <p className="font-inter text-graphite text-sm group-hover:text-gold transition-colors">@henriqueecastroadvogados</p>
                   </div>
                 </a>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-navy rounded-sm flex items-center justify-center shrink-0">
-                    <Clock size={18} className="text-gold" />
-                  </div>
-                  <div>
-                    <p className="font-inter font-semibold text-black text-sm">Horário de atendimento</p>
-                    <p className="font-inter text-graphite text-sm">Segunda a Sexta, 8h às 18h</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-navy rounded-sm flex items-center justify-center shrink-0">
-                    <MapPin size={18} className="text-gold" />
-                  </div>
-                  <div>
-                    <p className="font-inter font-semibold text-black text-sm">Abrangência</p>
-                    <p className="font-inter text-graphite text-sm">Atuação em todo o território nacional</p>
-                  </div>
-                </div>
               </div>
 
               {/* WhatsApp CTA */}
@@ -169,11 +149,15 @@ export default function Contact() {
 
             {/* Right — Form */}
             <motion.div
+              className="lg:col-span-3"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h2 className="font-playfair font-bold text-black text-2xl mb-8">Envie uma mensagem</h2>
+              <h2 className="font-playfair font-bold text-black text-2xl mb-4">Fale com nossa equipe</h2>
+              <p className="font-inter text-graphite text-sm leading-relaxed mb-8">
+                Utilize o formulário abaixo para enviar sua mensagem. Nossa equipe entrará em contato o mais breve possível.
+              </p>
 
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
@@ -232,7 +216,7 @@ export default function Contact() {
 
                   <div>
                     <label className="font-inter text-sm font-semibold text-black mb-1.5 block">
-                      Assunto *
+                      Área de Interesse *
                     </label>
                     <select
                       name="subject"

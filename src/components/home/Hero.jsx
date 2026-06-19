@@ -2,6 +2,9 @@ import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import Button from '../ui/Button'
 
+const VIDEO_URL = 'https://videos.pexels.com/video-files/32926874/14033092_2560_1440_30fps.mp4'
+const POSTER_URL = 'https://images.pexels.com/videos/32926874/above-the-city-building-cityscape-green-32926874.jpeg?auto=compress&cs=tinysrgb&w=1920'
+
 export default function Hero() {
   const stagger = {
     hidden: {},
@@ -14,16 +17,26 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
+      {/* Video Background — desktop */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={POSTER_URL}
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+      >
+        <source src={VIDEO_URL} type="video/mp4" />
+      </video>
+
+      {/* Static Image Fallback — mobile */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80)',
-        }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+        style={{ backgroundImage: `url(${POSTER_URL})` }}
       />
+
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-black/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-[#0f1f35]/75 to-navy/90" />
 
       {/* Content */}
       <motion.div
@@ -36,22 +49,21 @@ export default function Hero() {
           variants={item}
           className="font-inter text-gold font-semibold text-sm uppercase tracking-[0.3em] mb-6"
         >
-          Assessoria Jurídica Estratégica
+          Henrique e Castro Advogados
         </motion.p>
 
         <motion.h1
           variants={item}
           className="font-playfair font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight mb-6"
         >
-          Soluções jurídicas sob medida para pessoas e negócios
+          Segurança para decisões relevantes.
         </motion.h1>
 
         <motion.p
           variants={item}
           className="font-inter text-gray-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
         >
-          Atuação especializada em Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico
-          em todo o território nacional.
+          Proteção de patrimônios, negócios, reputações e liberdades diante de desafios jurídicos complexos.
         </motion.p>
 
         <motion.div variants={item} className="flex flex-col sm:flex-row items-center justify-center gap-4">

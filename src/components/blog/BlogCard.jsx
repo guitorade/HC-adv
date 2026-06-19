@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Calendar, User } from 'lucide-react'
+import { ArrowRight, Calendar, User, Clock } from 'lucide-react'
 
 const categoryColors = {
   Tributário: 'bg-blue-100 text-blue-800',
@@ -16,23 +16,30 @@ function formatDate(dateStr) {
   })
 }
 
+function getReadingTime(content) {
+  if (!content) return 5
+  return Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 200))
+}
+
 export default function BlogCard({ post }) {
   return (
     <article className="border border-gray-200 rounded-sm overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-300 group flex flex-col">
       <div
-        className="h-52 flex items-center justify-center shrink-0"
+        className="h-52 shrink-0"
         style={{ backgroundColor: post.coverColor }}
-      >
-        <p className="font-playfair text-white/20 text-5xl font-bold">H&C</p>
-      </div>
+      />
       <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex flex-wrap items-center gap-3 mb-3">
           <span className={`font-inter text-xs font-semibold px-2 py-1 rounded ${categoryColors[post.category] || 'bg-gray-100 text-gray-700'}`}>
             {post.category}
           </span>
           <span className="flex items-center gap-1 font-inter text-xs text-gray-light">
             <Calendar size={12} />
             {formatDate(post.date)}
+          </span>
+          <span className="flex items-center gap-1 font-inter text-xs text-gray-light">
+            <Clock size={12} />
+            {getReadingTime(post.content)} min
           </span>
         </div>
         <h2 className="font-playfair font-bold text-black text-lg leading-snug mb-3 group-hover:text-navy transition-colors">

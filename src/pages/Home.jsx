@@ -19,9 +19,9 @@ export default function Home() {
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4 }}>
       <Helmet>
         <title>Henrique e Castro Advogados | Assessoria Jurídica Estratégica</title>
-        <meta name="description" content="Escritório de advocacia com atuação em Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico. Atendimento em todo o Brasil." />
+        <meta name="description" content="Assessoria jurídica estratégica para proteção de patrimônios, negócios, reputações e liberdades. Atuação em Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico em todo o Brasil." />
         <meta property="og:title" content="Henrique e Castro Advogados | Assessoria Jurídica Estratégica" />
-        <meta property="og:description" content="Assessoria jurídica especializada em Tributário, Empresarial, Agronegócio, Penal e Penal Econômico. Atendimento em todo o Brasil." />
+        <meta property="og:description" content="Proteção de patrimônios, negócios, reputações e liberdades diante de desafios jurídicos complexos." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://henriquecastro.adv.br/" />
       </Helmet>

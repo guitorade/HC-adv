@@ -2,11 +2,10 @@ export const areas = [
   {
     id: 'tributario',
     slug: 'tributario',
-    icon: 'Scale',
     title: 'Direito Tributário',
-    shortDescription: 'Estruturação de soluções tributárias voltadas à proteção dos interesses de empresas, grupos econômicos e produtores rurais, combinando segurança jurídica, eficiência fiscal e visão estratégica.',
-    description: 'A tributação ocupa posição central na sustentabilidade e competitividade de qualquer atividade econômica. Em um ambiente marcado por elevada complexidade normativa, constantes alterações legislativas e crescente atuação fiscalizatória do Estado, decisões tributárias inadequadas podem comprometer patrimônio, liquidez e crescimento.\n\nO Henrique e Castro Advogados atua na estruturação de soluções tributárias voltadas à proteção dos interesses de empresas, grupos econômicos e produtores rurais, combinando segurança jurídica, eficiência fiscal e visão estratégica.\n\nNossa atuação transcende a simples interpretação da legislação tributária. Trabalhamos para transformar o planejamento jurídico em um instrumento de preservação patrimonial, otimização de resultados e fortalecimento da atividade empresarial.',
-    tagline: 'Porque uma gestão tributária eficiente não representa apenas economia. Representa vantagem competitiva.',
+    shortDescription: 'Planejamento tributário, recuperação de créditos e gestão fiscal estratégica para empresas, grupos econômicos e produtores rurais.',
+    description: 'A carga tributária e a constante evolução da legislação fiscal representam desafios relevantes para empresas, grupos econômicos e produtores rurais. Decisões tributárias inadequadas podem impactar diretamente a competitividade, a liquidez e a segurança patrimonial de qualquer operação.\n\nA adequada gestão fiscal vai além do cumprimento de obrigações acessórias. O planejamento tributário, a recuperação de créditos e a revisão de exigências fiscais representam ferramentas estratégicas para proteção patrimonial, redução de riscos e otimização de resultados.\n\nNossa atuação abrange desde o planejamento tributário até a condução de demandas administrativas e judiciais, buscando transformar a gestão tributária em um instrumento de fortalecimento e crescimento sustentável dos negócios.',
+    photo: '{{CLOUDINARY_FOTO_TRIBUTARIO}}',
     services: [
       'Planejamento tributário estratégico',
       'Recuperação de créditos tributários',
@@ -23,11 +22,10 @@ export const areas = [
   {
     id: 'empresarial',
     slug: 'empresarial',
-    icon: 'Briefcase',
     title: 'Direito Empresarial',
-    shortDescription: 'Atuação ao lado de empresários, investidores e gestores na construção de estruturas jurídicas sólidas, capazes de sustentar o crescimento dos negócios e oferecer segurança para decisões de alta relevância.',
-    description: 'Toda empresa está sujeita a riscos capazes de comprometer sua estabilidade, crescimento e continuidade. Estruturas societárias inadequadas, relações contratuais frágeis e decisões estratégicas desamparadas juridicamente podem gerar consequências que ultrapassam o aspecto financeiro.\n\nO Henrique e Castro Advogados atua ao lado de empresários, investidores e gestores na construção de estruturas jurídicas sólidas, capazes de sustentar o crescimento dos negócios e oferecer segurança para decisões de alta relevância.\n\nAcreditamos que a advocacia empresarial deve ocupar posição estratégica dentro das organizações, contribuindo para a mitigação de riscos, proteção patrimonial e fortalecimento institucional das empresas.',
-    tagline: '',
+    shortDescription: 'Segurança jurídica para relações empresariais, governança corporativa e crescimento sustentável dos negócios.',
+    description: 'Toda empresa está sujeita a riscos capazes de impactar sua estabilidade, crescimento e continuidade. Estruturas societárias inadequadas, relações contratuais frágeis e conflitos empresariais frequentemente geram consequências que ultrapassam o campo jurídico e afetam diretamente a operação dos negócios.\n\nA organização societária, a formalização adequada das relações comerciais e a prevenção de litígios constituem pilares fundamentais para empresas que buscam crescimento sustentável e segurança jurídica em suas decisões.\n\nNossa atuação busca proporcionar segurança jurídica às relações empresariais, fortalecer a governança corporativa e criar bases sólidas para o crescimento sustentável dos negócios.',
+    photo: '{{CLOUDINARY_FOTO_EMPRESARIAL}}',
     services: [
       'Assessoria jurídica empresarial contínua',
       'Constituição e reorganização societária',
@@ -44,11 +42,10 @@ export const areas = [
   {
     id: 'agronegocio',
     slug: 'agronegocio',
-    icon: 'Landmark',
     title: 'Agronegócio',
-    shortDescription: 'Assessoria jurídica especializada para produtores rurais, famílias empresárias e empresas do agronegócio, atuando na proteção patrimonial, estruturação de negócios rurais e planejamento sucessório.',
-    description: 'O agronegócio representa patrimônio, tradição, sucessão familiar e continuidade entre gerações. Em um setor marcado por desafios regulatórios, questões fundiárias, oscilações de mercado e relações negociais cada vez mais complexas, a segurança jurídica assume papel fundamental para a preservação da atividade produtiva e do patrimônio construído ao longo do tempo.\n\nO Henrique e Castro Advogados oferece assessoria jurídica especializada para produtores rurais, famílias empresárias e empresas do agronegócio, atuando na proteção patrimonial, estruturação de negócios rurais e planejamento sucessório.\n\nNossa atuação busca assegurar que o patrimônio construído hoje permaneça protegido para as próximas gerações.',
-    tagline: 'Porque quem cultiva o futuro precisa de segurança para preservá-lo.',
+    shortDescription: 'Proteção da atividade rural, segurança das relações jurídicas e preservação dos interesses de produtores rurais e investidores.',
+    description: 'O agronegócio opera em um ambiente que exige planejamento, previsibilidade e proteção patrimonial. Questões relacionadas à propriedade rural, contratos agrários, sucessão familiar, tributação e defesa da atividade produtiva demandam soluções jurídicas compatíveis com a complexidade do setor.\n\nA preservação do patrimônio rural e a segurança das operações são fatores essenciais para a continuidade dos negócios e para a proteção dos investimentos realizados ao longo de gerações.\n\nNossa atuação é direcionada à proteção da atividade rural, à segurança das relações jurídicas e à preservação dos interesses de produtores rurais, empresas e investidores ligados ao agronegócio.',
+    photo: '{{CLOUDINARY_FOTO_AGRONEGOCIO}}',
     services: [
       'Consultoria jurídica para produtores rurais',
       'Contratos agrários e agroindustriais',
@@ -66,11 +63,10 @@ export const areas = [
   {
     id: 'penal',
     slug: 'penal',
-    icon: 'Shield',
     title: 'Direito Penal',
-    shortDescription: 'Atuação na defesa de indivíduos submetidos à persecução penal, oferecendo acompanhamento estratégico desde as fases iniciais da investigação até a atuação perante os tribunais.',
-    description: 'Uma investigação criminal, uma medida cautelar ou uma acusação formal possuem potencial para impactar profundamente a liberdade, a reputação e a vida de uma pessoa. Nesses momentos, a atuação jurídica não pode ser improvisada.\n\nO Henrique e Castro Advogados atua na defesa de indivíduos submetidos à persecução penal, oferecendo acompanhamento estratégico desde as fases iniciais da investigação até a atuação perante os tribunais.\n\nCada caso é conduzido com absoluta seriedade, discrição e comprometimento, sempre orientado pela proteção dos direitos fundamentais e pela construção da melhor estratégia defensiva possível.',
-    tagline: 'Porque a liberdade não admite respostas genéricas.',
+    shortDescription: 'Defesa técnica de direitos e garantias fundamentais com estratégias compatíveis com as particularidades de cada caso.',
+    description: 'Investigações criminais e processos penais exigem atuação imediata, estratégia bem definida e profundo conhecimento técnico. Em situações que envolvem a liberdade, a reputação e os direitos fundamentais do indivíduo, cada decisão pode produzir impactos significativos sobre o desfecho do caso.\n\nA construção de uma defesa eficiente demanda análise criteriosa dos fatos, avaliação das provas e adoção das medidas jurídicas adequadas desde os primeiros atos da investigação.\n\nNossa atuação é pautada pela defesa técnica dos direitos e garantias fundamentais, desenvolvendo estratégias compatíveis com as particularidades de cada caso e com os interesses de cada cliente.',
+    photo: '{{CLOUDINARY_FOTO_PENAL}}',
     services: [
       'Prisão em flagrante',
       'Audiência de custódia',
@@ -87,11 +83,10 @@ export const areas = [
   {
     id: 'penal-economico',
     slug: 'penal-economico',
-    icon: 'Gavel',
     title: 'Penal Econômico e Empresarial',
-    shortDescription: 'Defesa estratégica para empresários, executivos e empresas em investigações e processos de alta complexidade envolvendo crimes econômicos, tributários e empresariais.',
-    description: 'O ambiente empresarial moderno é acompanhado por uma crescente expansão do Direito Penal sobre atividades econômicas, empresariais e financeiras.\n\nInvestigações envolvendo crimes tributários, lavagem de dinheiro, delitos empresariais e infrações contra a ordem econômica podem produzir impactos severos não apenas sobre a liberdade dos envolvidos, mas também sobre a reputação, o patrimônio e a continuidade das operações empresariais.\n\nO Henrique e Castro Advogados atua na condução de investigações e processos de alta complexidade, desenvolvendo estratégias voltadas à proteção integral de empresários, executivos e organizações.\n\nNossa atuação combina conhecimento técnico, visão empresarial e gestão de crise, permitindo uma abordagem capaz de compreender não apenas o processo criminal, mas os reflexos institucionais, financeiros e reputacionais que dele decorrem.',
-    tagline: '',
+    shortDescription: 'Prevenção de riscos e atuação técnica em investigações e processos de natureza penal econômica e empresarial.',
+    description: 'O aumento da fiscalização estatal e da complexidade regulatória ampliou significativamente os riscos de responsabilização criminal de empresários, administradores e organizações. Investigações envolvendo crimes tributários, financeiros, societários e contra a ordem econômica podem produzir impactos severos sobre o patrimônio, a reputação e a continuidade dos negócios.\n\nA condução dessas demandas exige compreensão simultânea dos aspectos jurídicos, financeiros e empresariais envolvidos, permitindo a construção de estratégias compatíveis com a realidade de cada operação.\n\nA prevenção de riscos e a atuação técnica em investigações e processos de natureza penal econômica tornaram-se componentes indispensáveis da gestão empresarial contemporânea.',
+    photo: '{{CLOUDINARY_FOTO_PENAL_ECONOMICO}}',
     services: [
       'Crimes tributários',
       'Crimes contra a ordem econômica',

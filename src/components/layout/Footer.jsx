@@ -27,7 +27,7 @@ export default function Footer() {
               </p>
             </div>
             <p className="font-inter text-sm text-gray-400 leading-relaxed">
-              Assessoria jurídica estratégica para pessoas e negócios em todo o Brasil.
+              Proteção de patrimônios, negócios, reputações e liberdades em todo o território nacional.
             </p>
           </div>
 
@@ -39,10 +39,10 @@ export default function Footer() {
             <nav className="flex flex-col gap-2">
               {[
                 { to: '/', label: 'Home' },
-                { to: '/sobre', label: 'O Escritório' },
+                { to: '/sobre', label: 'Sobre Nós' },
                 { to: '/areas-de-atuacao', label: 'Áreas de Atuação' },
                 { to: '/equipe', label: 'Equipe' },
-                { to: '/blog', label: 'Blog' },
+                { to: '/blog', label: 'Publicações' },
                 { to: '/contato', label: 'Contato' },
               ].map(({ to, label }) => (
                 <Link
@@ -97,14 +97,17 @@ export default function Footer() {
                 henriqueecastroadvogados@gmail.com
               </a>
               <a
-                href="https://instagram.com/adv.thaleshenrique"
+                href="https://instagram.com/henriqueecastroadvogados"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 font-inter text-sm text-gray-400 hover:text-gold transition-colors"
               >
                 <InstagramIcon size={16} className="text-gold shrink-0" />
-                @adv.thaleshenrique
+                @henriqueecastroadvogados
               </a>
+              <p className="font-inter text-xs text-gray-500 mt-4">
+                De segunda a sexta-feira, das 9h às 18h.
+              </p>
             </div>
           </div>
         </div>

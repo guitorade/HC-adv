@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Scale, Briefcase, Shield, Landmark, Gavel, CheckCircle2 } from 'lucide-react'
+import { ChevronDown, CheckCircle2 } from 'lucide-react'
 import { areas } from '../data/areas'
 import Button from '../components/ui/Button'
 
@@ -10,16 +11,20 @@ const pageVariants = {
   exit: { opacity: 0 },
 }
 
-const icons = { Scale, Briefcase, Shield, Landmark, Gavel }
-
 export default function Areas() {
+  const [openIndex, setOpenIndex] = useState(0)
+
+  const toggle = (i) => {
+    setOpenIndex(openIndex === i ? null : i)
+  }
+
   return (
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4 }}>
       <Helmet>
         <title>Áreas de Atuação | Henrique e Castro Advogados</title>
-        <meta name="description" content="Tributário, Empresarial, Agronegócio, Penal e Penal Econômico. Assessoria jurídica especializada para pessoas e negócios." />
+        <meta name="description" content="Tributário, Empresarial, Agronegócio, Penal e Penal Econômico. Assessoria jurídica estratégica para proteção de patrimônios, negócios e liberdades." />
         <meta property="og:title" content="Áreas de Atuação | Henrique e Castro Advogados" />
-        <meta property="og:description" content="Tributário, Empresarial, Agronegócio, Penal e Penal Econômico. Assessoria jurídica especializada." />
+        <meta property="og:description" content="Tributário, Empresarial, Agronegócio, Penal e Penal Econômico. Assessoria jurídica estratégica." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://henriquecastro.adv.br/areas-de-atuacao" />
       </Helmet>
@@ -38,66 +43,87 @@ export default function Areas() {
         </div>
       </section>
 
-      {/* Areas */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="space-y-20">
-          {areas.map((area, i) => {
-            const Icon = icons[area.icon]
-            const isEven = i % 2 === 0
-            return (
-              <motion.section
-                key={area.id}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.7 }}
-              >
-                {/* Icon + title block */}
-                <div className={!isEven ? 'lg:order-2' : ''}>
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-navy rounded-sm mb-6">
-                    {Icon && <Icon size={30} className="text-gold" />}
-                  </div>
-                  <h2 className="font-playfair font-bold text-black text-3xl mb-4">{area.title}</h2>
-                  <div className="space-y-4 font-inter text-graphite text-base leading-relaxed mb-6">
-                    {area.description.split('\n\n').map((paragraph, pi) => (
-                      <p key={pi}>{paragraph}</p>
-                    ))}
-                  </div>
-                  {area.tagline && (
-                    <p className="font-playfair italic text-gold text-lg mb-6">
-                      {area.tagline}
-                    </p>
-                  )}
-                  <div className="h-px bg-gold/30 mb-6" />
-                  <p className="font-inter font-semibold text-black text-sm uppercase tracking-wider mb-4">
-                    Principais áreas de atuação
-                  </p>
-                  <ul className="space-y-3">
-                    {area.services.map((service) => (
-                      <li key={service} className="flex items-start gap-3">
-                        <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
-                        <span className="font-inter text-graphite text-sm leading-relaxed">{service}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+      {/* Accordion */}
+      <section className="bg-white py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="divide-y divide-gray-200 border-t border-b border-gray-200">
+            {areas.map((area, i) => {
+              const isOpen = openIndex === i
+              return (
+                <div key={area.id}>
+                  <button
+                    onClick={() => toggle(i)}
+                    className="w-full flex items-center justify-between py-6 px-2 text-left group"
+                  >
+                    <h2 className={`font-playfair font-bold text-2xl md:text-3xl transition-colors duration-300 ${
+                      isOpen ? 'text-gold' : 'text-black group-hover:text-gold'
+                    }`}>
+                      {area.title}
+                    </h2>
+                    <motion.div
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="shrink-0 ml-4"
+                    >
+                      <ChevronDown size={24} className={`transition-colors duration-300 ${
+                        isOpen ? 'text-gold' : 'text-gray-400 group-hover:text-gold'
+                      }`} />
+                    </motion.div>
+                  </button>
 
-                {/* Decorative panel */}
-                <div className={`${!isEven ? 'lg:order-1' : ''} hidden lg:block`}>
-                  <div className="relative h-80 bg-navy rounded-sm flex items-center justify-center overflow-hidden">
-                    <div className="text-center px-4">
-                      {Icon && <Icon size={64} className="text-gold/20 mx-auto mb-4" />}
-                      <p className="font-playfair text-white/10 text-4xl font-bold leading-tight">{area.title}</p>
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gold/40" />
-                  </div>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-10 px-2">
+                          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+                            {area.photo && !area.photo.startsWith('{{') && (
+                              <div className="lg:col-span-2">
+                                <img
+                                  src={area.photo}
+                                  alt={area.title}
+                                  className="w-full h-64 lg:h-80 object-cover rounded-sm"
+                                  loading="lazy"
+                                />
+                              </div>
+                            )}
+
+                            <div className={area.photo && !area.photo.startsWith('{{') ? 'lg:col-span-3' : 'lg:col-span-5'}>
+                              <div className="space-y-4 font-inter text-graphite text-base leading-relaxed mb-8">
+                                {area.description.split('\n\n').map((paragraph, pi) => (
+                                  <p key={pi}>{paragraph}</p>
+                                ))}
+                              </div>
+
+                              <div className="h-px bg-gold/30 mb-6" />
+                              <p className="font-inter font-semibold text-black text-sm uppercase tracking-wider mb-4">
+                                Principais áreas de atuação
+                              </p>
+                              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                {area.services.map((service) => (
+                                  <li key={service} className="flex items-start gap-3">
+                                    <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
+                                    <span className="font-inter text-graphite text-sm leading-relaxed">{service}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </motion.section>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* CTA */}
       <section className="bg-navy py-20">
@@ -106,7 +132,7 @@ export default function Areas() {
             Encontrou a área que precisa?
           </h2>
           <p className="font-inter text-gray-300 mb-8">
-            Entre em contato e agende uma consulta. Nossa equipe está pronta para atender você.
+            Entre em contato e converse com nossa equipe.
           </p>
           <Button to="/contato" variant="primary" size="lg">
             Fale conosco

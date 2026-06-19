@@ -13,10 +13,10 @@ export default function Blog() {
   return (
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4 }}>
       <Helmet>
-        <title>Blog | Henrique e Castro Advogados</title>
-        <meta name="description" content="Artigos e conteúdos sobre Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico." />
-        <meta property="og:title" content="Blog | Henrique e Castro Advogados" />
-        <meta property="og:description" content="Artigos e conteúdos sobre Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico." />
+        <title>Publicações | Henrique e Castro Advogados</title>
+        <meta name="description" content="Artigos, análises e reflexões sobre temas tributários, empresariais, penais e do agronegócio." />
+        <meta property="og:title" content="Publicações | Henrique e Castro Advogados" />
+        <meta property="og:description" content="Artigos, análises e reflexões sobre temas tributários, empresariais, penais e do agronegócio." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://henriquecastro.adv.br/blog" />
       </Helmet>
@@ -29,8 +29,11 @@ export default function Blog() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold mb-3">Publicações</p>
-            <h1 className="font-playfair font-bold text-white text-4xl md:text-5xl">Conteúdo & Artigos</h1>
+            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold mb-3">Conteúdo Jurídico</p>
+            <h1 className="font-playfair font-bold text-white text-4xl md:text-5xl mb-4">Publicações</h1>
+            <p className="font-inter text-gray-300 text-base md:text-lg max-w-3xl leading-relaxed">
+              Acompanhe artigos, análises e reflexões sobre temas tributários, empresariais, penais e do agronegócio que impactam empresas, empresários, produtores rurais e investidores.
+            </p>
           </motion.div>
         </div>
       </section>

@@ -16,10 +16,10 @@ export default function CtaSection() {
         transition={{ duration: 0.7 }}
       >
         <h2 className="font-playfair font-bold text-white text-3xl md:text-4xl leading-tight mb-6">
-          Precisa de assessoria jurídica?
+          Busca mais segurança para tomar decisões importantes?
         </h2>
         <p className="font-inter text-gray-300 text-lg mb-10">
-          Entre em contato e agende uma consulta. Atendemos em todo o Brasil.
+          Entre em contato e converse com nossa equipe.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button

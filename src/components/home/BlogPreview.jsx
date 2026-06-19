@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Calendar } from 'lucide-react'
+import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import SectionTitle from '../ui/SectionTitle'
 import Button from '../ui/Button'
 import { blogPosts } from '../../data/blog-posts'
@@ -20,6 +20,11 @@ function formatDate(dateStr) {
   })
 }
 
+function getReadingTime(content) {
+  if (!content) return 5
+  return Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 200))
+}
+
 export default function BlogPreview() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, amount: 0.1 })
@@ -35,7 +40,7 @@ export default function BlogPreview() {
           transition={{ duration: 0.6 }}
         >
           <SectionTitle
-            eyebrow="Blog"
+            eyebrow="Publicações"
             title="Conteúdo & Artigos"
             subtitle="Análises e orientações sobre as principais questões jurídicas do momento"
             center
@@ -51,13 +56,10 @@ export default function BlogPreview() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              {/* Cover */}
               <div
-                className="h-48 flex items-center justify-center"
+                className="h-48"
                 style={{ backgroundColor: post.coverColor }}
-              >
-                <p className="font-playfair text-white/20 text-5xl font-bold">H&C</p>
-              </div>
+              />
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <span className={`font-inter text-xs font-semibold px-2 py-1 rounded ${categoryColors[post.category] || 'bg-gray-100 text-gray-700'}`}>
@@ -66,6 +68,10 @@ export default function BlogPreview() {
                   <span className="flex items-center gap-1 font-inter text-xs text-gray-light">
                     <Calendar size={12} />
                     {formatDate(post.date)}
+                  </span>
+                  <span className="flex items-center gap-1 font-inter text-xs text-gray-light">
+                    <Clock size={12} />
+                    {getReadingTime(post.content)} min
                   </span>
                 </div>
                 <h3 className="font-playfair font-bold text-black text-base leading-snug mb-3 group-hover:text-navy transition-colors">
@@ -92,7 +98,7 @@ export default function BlogPreview() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <Button to="/blog" variant="outline-dark">
-            Ver todos os artigos
+            Ver todas as publicações
           </Button>
         </motion.div>
       </div>

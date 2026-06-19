@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Shield, Target, Eye, Users } from 'lucide-react'
+import { Target, Users, Shield, TrendingUp } from 'lucide-react'
 import SectionTitle from '../components/ui/SectionTitle'
 import Button from '../components/ui/Button'
 
@@ -12,24 +12,24 @@ const pageVariants = {
 
 const values = [
   {
-    icon: Shield,
-    title: 'Excelência Técnica',
-    desc: 'Rigor jurídico e atualização constante para entregar as melhores soluções.',
-  },
-  {
     icon: Target,
-    title: 'Visão Estratégica',
-    desc: 'Antecipação de riscos e identificação de oportunidades para proteção dos seus interesses.',
-  },
-  {
-    icon: Eye,
-    title: 'Transparência',
-    desc: 'Comunicação clara e honesta em todas as etapas da relação profissional.',
+    title: 'Estratégia',
+    desc: 'Transformamos o Direito em um instrumento de proteção, crescimento e tomada de decisões, antecipando riscos e construindo soluções alinhadas aos objetivos de longo prazo de nossos clientes.',
   },
   {
     icon: Users,
-    title: 'Compromisso',
-    desc: 'Atendimento personalizado e condução responsável de cada demanda.',
+    title: 'Proximidade',
+    desc: 'Relações de confiança são construídas por meio da presença, da disponibilidade e da compreensão genuína das necessidades de cada cliente.',
+  },
+  {
+    icon: Shield,
+    title: 'Segurança',
+    desc: 'Atuamos para reduzir incertezas, proteger interesses e oferecer a base jurídica necessária para decisões seguras e sustentáveis.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Resultado',
+    desc: 'Cada atuação é conduzida com foco na geração de valor, na proteção de ativos e na obtenção de resultados consistentes e duradouros.',
   },
 ]
 
@@ -37,10 +37,10 @@ export default function About() {
   return (
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4 }}>
       <Helmet>
-        <title>O Escritório | Henrique e Castro Advogados</title>
-        <meta name="description" content="Advocacia moderna, estratégica e comprometida com a proteção dos interesses de seus clientes. Atuação em Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico." />
-        <meta property="og:title" content="O Escritório | Henrique e Castro Advogados" />
-        <meta property="og:description" content="Advocacia moderna, estratégica e comprometida com a proteção dos interesses de seus clientes." />
+        <title>Sobre Nós | Henrique e Castro Advogados</title>
+        <meta name="description" content="Assessoria jurídica estratégica para proteção de patrimônios, negócios, reputações e liberdades. Atuação em Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico." />
+        <meta property="og:title" content="Sobre Nós | Henrique e Castro Advogados" />
+        <meta property="og:description" content="Assessoria jurídica estratégica para proteção de patrimônios, negócios, reputações e liberdades." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://henriquecastro.adv.br/sobre" />
       </Helmet>
@@ -54,61 +54,39 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold mb-3">Quem somos</p>
-            <h1 className="font-playfair font-bold text-white text-4xl md:text-5xl">O Escritório</h1>
+            <h1 className="font-playfair font-bold text-white text-4xl md:text-5xl">Sobre Nós</h1>
           </motion.div>
         </div>
       </section>
 
-      {/* Sobre Nós */}
+      {/* Texto principal */}
       <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle eyebrow="Sobre Nós" title="Henrique e Castro Advogados" />
+          <SectionTitle eyebrow="O Escritório" title="Henrique e Castro Advogados" />
           <div className="mt-8 space-y-6 font-inter text-graphite text-base leading-relaxed">
             <p>
-              O Henrique e Castro Advogados nasceu com o propósito de oferecer uma advocacia moderna, estratégica e comprometida com a proteção dos interesses de seus clientes em um ambiente jurídico cada vez mais complexo e desafiador.
+              Patrimônio, reputação, liberdade e continuidade de negócios ou projetos pessoais são interesses que exigem proteção constante. Em um ambiente marcado por constantes transformações regulatórias, aumento da litigiosidade e maior exposição a riscos, decisões jurídicas passaram a ocupar posição estratégica na preservação de interesses e na construção de resultados sustentáveis.
             </p>
             <p>
-              Atuamos nas áreas de Direito Tributário, Empresarial, Agronegócio e Penal, prestando assessoria jurídica a empresários, produtores rurais, empresas e pessoas físicas que buscam não apenas soluções para conflitos já existentes, mas também segurança para tomar decisões e construir o futuro com confiança e com proteção.
+              O escritório Henrique e Castro Advogados foi estruturado para atuar além da resolução de conflitos. Nossa proposta consiste em oferecer assessoria jurídica estratégica, capaz de antecipar riscos, proteger ativos, fortalecer operações e proporcionar maior segurança para a tomada de decisões.
             </p>
             <p>
-              Combinamos conhecimento técnico, visão multidisciplinar e atuação personalizada para desenvolver soluções jurídicas alinhadas às particularidades de cada cliente e à realidade de seus negócios. Entendemos que questões jurídicas frequentemente envolvem patrimônio, reputação, liberdade e a continuidade de projetos construídos ao longo de anos de dedicação, suor e trabalho.
+              Atuamos ao lado de empresas, empresários, produtores rurais e pessoas físicas na identificação de oportunidades, mitigação de vulnerabilidades e desenvolvimento de soluções jurídicas alinhadas aos objetivos de cada cliente.
+            </p>
+            <p>
+              Combinamos conhecimento técnico, visão de negócios e atuação personalizada para enfrentar desafios complexos com segurança, eficiência e previsibilidade. Nossa abordagem integra prevenção, gestão de riscos, proteção patrimonial e defesa de interesses, sempre orientada pela busca de soluções consistentes e sustentáveis.
+            </p>
+            <p>
+              Entendemos que o Direito não deve ser visto apenas como instrumento de reação a problemas já existentes, mas como uma ferramenta estratégica de proteção, crescimento e continuidade.
+            </p>
+            <p>
+              Mais do que prestar serviços jurídicos, construímos relações de confiança pautadas pela proximidade, excelência técnica e compromisso com os resultados, oferecendo suporte jurídico qualificado para aqueles que buscam segurança, estabilidade e proteção em suas decisões mais relevantes.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Bloco de destaque */}
-      <section className="bg-navy py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center"
-          >
-            <blockquote className="font-playfair text-white text-lg md:text-xl leading-relaxed italic">
-              "Compreendemos a advocacia como uma atividade essencialmente estratégica, voltada não apenas à resolução de conflitos, mas também à antecipação de riscos, proteção de interesses e identificação de oportunidades capazes de fortalecer a segurança jurídica, preservar patrimônios e proporcionar maior estabilidade para a tomada de decisões em cenários de elevada complexidade."
-            </blockquote>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Continuação do texto */}
-      <section className="bg-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 font-inter text-graphite text-base leading-relaxed">
-            <p>
-              Nossa atuação é pautada pela excelência técnica, ética profissional, transparência e compromisso com resultados, sempre buscando oferecer um atendimento personalizado e uma condução responsável de cada demanda confiada ao escritório.
-            </p>
-            <p>
-              Mais do que prestar serviços jurídicos, buscamos construir relações de confiança duradouras, baseadas na credibilidade, na proximidade e na defesa firme dos interesses de nossos clientes.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Valores */}
+      {/* Pilares */}
       <section className="bg-off-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -138,12 +116,12 @@ export default function About() {
       {/* CTA */}
       <section className="bg-white py-20">
         <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="font-playfair font-bold text-black text-3xl mb-6">Entre em contato</h2>
+          <h2 className="font-playfair font-bold text-black text-3xl mb-6">Fale com nossa equipe</h2>
           <p className="font-inter text-gray-light mb-8">
             Estamos prontos para atender você e encontrar a melhor solução jurídica para o seu caso.
           </p>
           <Button to="/contato" variant="primary" size="lg">
-            Fale conosco
+            Entrar em contato
           </Button>
         </div>
       </section>

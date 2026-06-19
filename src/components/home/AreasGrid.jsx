@@ -1,11 +1,9 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Scale, Briefcase, Shield, Landmark, Gavel, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SectionTitle from '../ui/SectionTitle'
 import { areas } from '../../data/areas'
-
-const icons = { Scale, Briefcase, Shield, Landmark, Gavel }
 
 export default function AreasGrid() {
   const ref = useRef(null)
@@ -29,41 +27,31 @@ export default function AreasGrid() {
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-6">
-          {areas.map((area, i) => {
-            const Icon = icons[area.icon]
-            return (
-              <motion.div
-                key={area.id}
-                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+          {areas.map((area, i) => (
+            <motion.div
+              key={area.id}
+              className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+            >
+              <Link
+                to="/areas-de-atuacao"
+                className="group block bg-white border border-gray-200 rounded-sm p-8 hover:border-gold hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full"
               >
-                <Link
-                  to="/areas-de-atuacao"
-                  className="group block bg-white border border-gray-200 rounded-sm p-8 hover:border-gold hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full"
-                >
-                  <div className="mb-5">
-                    {Icon && (
-                      <Icon
-                        size={32}
-                        className="text-graphite group-hover:text-gold transition-colors duration-300"
-                      />
-                    )}
-                  </div>
-                  <h3 className="font-playfair font-bold text-black text-xl mb-3">
-                    {area.title}
-                  </h3>
-                  <p className="font-inter text-gray-light text-sm leading-relaxed mb-5">
-                    {area.shortDescription}
-                  </p>
-                  <span className="inline-flex items-center gap-2 font-inter font-semibold text-gold text-sm group-hover:gap-3 transition-all duration-200">
-                    Saiba mais <ArrowRight size={14} />
-                  </span>
-                </Link>
-              </motion.div>
-            )
-          })}
+                <div className="w-10 h-1 bg-gold mb-5" />
+                <h3 className="font-playfair font-bold text-black text-xl mb-3">
+                  {area.title}
+                </h3>
+                <p className="font-inter text-gray-light text-sm leading-relaxed mb-5">
+                  {area.shortDescription}
+                </p>
+                <span className="inline-flex items-center gap-2 font-inter font-semibold text-gold text-sm group-hover:gap-3 transition-all duration-200">
+                  Saiba mais <ArrowRight size={14} />
+                </span>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

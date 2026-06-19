@@ -4,10 +4,10 @@ import { MessageCircle, Menu, X } from 'lucide-react'
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/sobre', label: 'O Escritório' },
+  { to: '/sobre', label: 'Sobre Nós' },
   { to: '/areas-de-atuacao', label: 'Áreas de Atuação' },
   { to: '/equipe', label: 'Equipe' },
-  { to: '/blog', label: 'Blog' },
+  { to: '/blog', label: 'Publicações' },
   { to: '/contato', label: 'Contato' },
 ]
 
@@ -34,7 +34,7 @@ export default function Navbar() {
             <span className="font-playfair font-bold text-white text-lg tracking-wide">
               HENRIQUE E CASTRO
             </span>
-            <span className="font-inter font-medium text-gold text-xs tracking-widest uppercase">
+            <span className="font-inter font-medium text-gold text-xs tracking-widest uppercase text-right">
               Advogados
             </span>
           </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
               className="flex items-center gap-2 bg-gold text-navy font-inter font-semibold text-xs uppercase tracking-wider px-4 py-2 rounded-sm hover:bg-amber-600 transition-all duration-200 ml-2"
             >
               <MessageCircle size={14} />
-              (31) 98499-5968
+              WhatsApp
             </a>
           </nav>
 

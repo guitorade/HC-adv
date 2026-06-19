@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Calendar, User, ChevronRight, MessageCircle } from 'lucide-react'
+import { Calendar, User, ChevronRight, MessageCircle, Clock } from 'lucide-react'
 import { blogPosts } from '../data/blog-posts'
 import BlogCard from '../components/blog/BlogCard'
 import Button from '../components/ui/Button'
@@ -89,7 +89,7 @@ export default function BlogPost() {
           <nav className="flex items-center gap-2 font-inter text-xs text-white/60 mb-6">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={12} />
-            <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <Link to="/blog" className="hover:text-white transition-colors">Publicações</Link>
             <ChevronRight size={12} />
             <span className="text-white/80 truncate max-w-xs">{post.title}</span>
           </nav>
@@ -110,6 +110,10 @@ export default function BlogPost() {
             <span className="flex items-center gap-1.5">
               <Calendar size={14} />
               {formatDate(post.date)}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Clock size={14} />
+              {Math.max(1, Math.ceil((post.content || '').trim().split(/\s+/).length / 200))} min de leitura
             </span>
           </div>
         </div>
@@ -177,9 +181,7 @@ export default function BlogPost() {
                         to={`/blog/${rp.slug}`}
                         className="block border border-gray-200 rounded-sm overflow-hidden hover:shadow-md transition-shadow group"
                       >
-                        <div className="h-24 flex items-center justify-center" style={{ backgroundColor: rp.coverColor }}>
-                          <span className="font-playfair text-white/20 text-2xl font-bold">H&C</span>
-                        </div>
+                        <div className="h-24" style={{ backgroundColor: rp.coverColor }} />
                         <div className="p-4">
                           <span className={`font-inter text-xs font-semibold px-2 py-0.5 rounded ${categoryColors[rp.category] || ''}`}>
                             {rp.category}

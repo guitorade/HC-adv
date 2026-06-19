@@ -21,16 +21,13 @@ export default function AboutPreview() {
           >
             <SectionTitle
               eyebrow="Quem somos"
-              title="Compromisso com excelência e proximidade"
+              title="Assessoria jurídica estratégica e personalizada"
             />
             <p className="font-inter text-graphite text-base leading-relaxed mt-6 mb-8">
-              O Henrique e Castro Advogados nasceu com o propósito de oferecer uma advocacia
-              moderna, estratégica e comprometida com a proteção dos interesses de seus clientes.
-              Atuamos em todo o território nacional, combinando conhecimento técnico, visão
-              multidisciplinar e atuação personalizada para desenvolver soluções jurídicas sob medida.
+              O escritório Henrique e Castro Advogados foi estruturado para atuar além da resolução de conflitos. Assessoramos empresas, empresários, produtores rurais e pessoas físicas na proteção de patrimônios, negócios, reputações e liberdades, com atuação em todo o território nacional.
             </p>
             <Button to="/sobre" variant="outline-dark">
-              Saiba mais sobre o escritório
+              Conheça o escritório
             </Button>
           </motion.div>
 
