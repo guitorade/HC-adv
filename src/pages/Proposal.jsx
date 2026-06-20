@@ -23,6 +23,7 @@ const plans = [
       'Formulário de contato básico',
       'Hospedagem inclusa (Vercel)',
       'Certificado SSL (HTTPS)',
+      'Logo profissional exclusiva',
     ],
     notIncluded: ['Domínio personalizado (.adv.br)'],
     maintenance: [
@@ -77,6 +78,7 @@ const plans = [
       'Página de equipe com perfis dos sócios',
       'Formulário avançado com seleção de área jurídica',
       'Design clássico-corporativo sob medida',
+      'Manual de Identidade Visual (opcional — R$ 190)',
       'Domínio .adv.br incluso no 1º ano',
       'Relatório mensal de visitas',
     ],
@@ -110,6 +112,7 @@ const plans = [
       'Newsletter com captura de e-mail',
       'Painel administrativo para gestão',
       'Preparação para integração com ADVBOX / Astrea',
+      'Manual de Identidade Visual incluso',
       'Domínio .adv.br incluso no 1º ano',
     ],
     maintenance: [
@@ -132,6 +135,8 @@ const tableRows = [
   { feature: 'Formulário de contato', promo: true, essencial: true, profissional: true, completo: true },
   { feature: 'SSL / HTTPS', promo: true, essencial: true, profissional: true, completo: true },
   { feature: 'Hospedagem inclusa', promo: true, essencial: true, profissional: true, completo: true },
+  { feature: 'Logo profissional', promo: true, essencial: true, profissional: true, completo: true },
+  { feature: 'Manual de Identidade Visual', promo: false, essencial: false, profissional: '+R$ 190', completo: true },
   { feature: 'Domínio .adv.br', promo: false, essencial: false, profissional: true, completo: true },
   { feature: 'Multi-página (6 páginas)', promo: false, essencial: false, profissional: true, completo: true },
   { feature: 'Blog com artigos', promo: false, essencial: false, profissional: true, completo: true },
@@ -156,6 +161,10 @@ function Check() {
 }
 function Cross() {
   return <X size={14} className="text-gray-300 mx-auto" />
+}
+function CellValue({ v }) {
+  if (typeof v === 'string') return <span className="font-inter text-xs text-gold font-semibold">{v}</span>
+  return v ? <Check /> : <Cross />
 }
 
 function PlanCard({ plan, index }) {
@@ -419,10 +428,10 @@ export default function Proposal() {
                 {tableRows.map((row, i) => (
                   <tr key={row.feature} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                     <td className="px-4 py-2.5 font-inter text-graphite text-xs">{row.feature}</td>
-                    <td className="text-center px-3 py-2.5 bg-gold/5">{row.promo ? <Check /> : <Cross />}</td>
-                    <td className="text-center px-3 py-2.5">{row.essencial ? <Check /> : <Cross />}</td>
-                    <td className="text-center px-3 py-2.5 bg-gold/5">{row.profissional ? <Check /> : <Cross />}</td>
-                    <td className="text-center px-3 py-2.5">{row.completo ? <Check /> : <Cross />}</td>
+                    <td className="text-center px-3 py-2.5 bg-gold/5"><CellValue v={row.promo} /></td>
+                    <td className="text-center px-3 py-2.5"><CellValue v={row.essencial} /></td>
+                    <td className="text-center px-3 py-2.5 bg-gold/5"><CellValue v={row.profissional} /></td>
+                    <td className="text-center px-3 py-2.5"><CellValue v={row.completo} /></td>
                   </tr>
                 ))}
 
