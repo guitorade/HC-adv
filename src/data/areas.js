@@ -5,7 +5,7 @@ export const areas = [
     title: 'Direito Tributário',
     shortDescription: 'Planejamento tributário, recuperação de créditos e gestão fiscal estratégica para empresas, grupos econômicos e produtores rurais.',
     description: 'A carga tributária e a constante evolução da legislação fiscal representam desafios relevantes para empresas, grupos econômicos e produtores rurais. Decisões tributárias inadequadas podem impactar diretamente a competitividade, a liquidez e a segurança patrimonial de qualquer operação.\n\nA adequada gestão fiscal vai além do cumprimento de obrigações acessórias. O planejamento tributário, a recuperação de créditos e a revisão de exigências fiscais representam ferramentas estratégicas para proteção patrimonial, redução de riscos e otimização de resultados.\n\nNossa atuação abrange desde o planejamento tributário até a condução de demandas administrativas e judiciais, buscando transformar a gestão tributária em um instrumento de fortalecimento e crescimento sustentável dos negócios.',
-    photo: '{{CLOUDINARY_FOTO_TRIBUTARIO}}',
+    photo: 'https://res.cloudinary.com/dzgvyu921/image/upload/c_fill,w_800,h_500,g_auto,q_auto,f_auto/v1781911498/PROJETOS/HC-ADVOGADOS/galeria%20especialidade_tributario.png',
     services: [
       'Planejamento tributário estratégico',
       'Recuperação de créditos tributários',
@@ -25,7 +25,7 @@ export const areas = [
     title: 'Direito Empresarial',
     shortDescription: 'Segurança jurídica para relações empresariais, governança corporativa e crescimento sustentável dos negócios.',
     description: 'Toda empresa está sujeita a riscos capazes de impactar sua estabilidade, crescimento e continuidade. Estruturas societárias inadequadas, relações contratuais frágeis e conflitos empresariais frequentemente geram consequências que ultrapassam o campo jurídico e afetam diretamente a operação dos negócios.\n\nA organização societária, a formalização adequada das relações comerciais e a prevenção de litígios constituem pilares fundamentais para empresas que buscam crescimento sustentável e segurança jurídica em suas decisões.\n\nNossa atuação busca proporcionar segurança jurídica às relações empresariais, fortalecer a governança corporativa e criar bases sólidas para o crescimento sustentável dos negócios.',
-    photo: '{{CLOUDINARY_FOTO_EMPRESARIAL}}',
+    photo: 'https://res.cloudinary.com/dzgvyu921/image/upload/c_fill,w_800,h_500,g_auto,q_auto,f_auto/v1781911513/PROJETOS/HC-ADVOGADOS/galeria%20especialidade_empresarial.png',
     services: [
       'Assessoria jurídica empresarial contínua',
       'Constituição e reorganização societária',
@@ -45,7 +45,7 @@ export const areas = [
     title: 'Agronegócio',
     shortDescription: 'Proteção da atividade rural, segurança das relações jurídicas e preservação dos interesses de produtores rurais e investidores.',
     description: 'O agronegócio opera em um ambiente que exige planejamento, previsibilidade e proteção patrimonial. Questões relacionadas à propriedade rural, contratos agrários, sucessão familiar, tributação e defesa da atividade produtiva demandam soluções jurídicas compatíveis com a complexidade do setor.\n\nA preservação do patrimônio rural e a segurança das operações são fatores essenciais para a continuidade dos negócios e para a proteção dos investimentos realizados ao longo de gerações.\n\nNossa atuação é direcionada à proteção da atividade rural, à segurança das relações jurídicas e à preservação dos interesses de produtores rurais, empresas e investidores ligados ao agronegócio.',
-    photo: '{{CLOUDINARY_FOTO_AGRONEGOCIO}}',
+    photo: 'https://res.cloudinary.com/dzgvyu921/image/upload/c_fill,w_800,h_500,g_auto,q_auto,f_auto/v1781911838/PROJETOS/HC-ADVOGADOS/galeria%20especialidade_agronegocio.jpg',
     services: [
       'Consultoria jurídica para produtores rurais',
       'Contratos agrários e agroindustriais',
@@ -66,7 +66,7 @@ export const areas = [
     title: 'Direito Penal',
     shortDescription: 'Defesa técnica de direitos e garantias fundamentais com estratégias compatíveis com as particularidades de cada caso.',
     description: 'Investigações criminais e processos penais exigem atuação imediata, estratégia bem definida e profundo conhecimento técnico. Em situações que envolvem a liberdade, a reputação e os direitos fundamentais do indivíduo, cada decisão pode produzir impactos significativos sobre o desfecho do caso.\n\nA construção de uma defesa eficiente demanda análise criteriosa dos fatos, avaliação das provas e adoção das medidas jurídicas adequadas desde os primeiros atos da investigação.\n\nNossa atuação é pautada pela defesa técnica dos direitos e garantias fundamentais, desenvolvendo estratégias compatíveis com as particularidades de cada caso e com os interesses de cada cliente.',
-    photo: '{{CLOUDINARY_FOTO_PENAL}}',
+    photo: 'https://res.cloudinary.com/dzgvyu921/image/upload/c_fill,w_800,h_500,g_auto,q_auto,f_auto/v1781911838/PROJETOS/HC-ADVOGADOS/galeria%20especialidade_penal.jpg',
     services: [
       'Prisão em flagrante',
       'Audiência de custódia',
@@ -86,7 +86,7 @@ export const areas = [
     title: 'Penal Econômico e Empresarial',
     shortDescription: 'Prevenção de riscos e atuação técnica em investigações e processos de natureza penal econômica e empresarial.',
     description: 'O aumento da fiscalização estatal e da complexidade regulatória ampliou significativamente os riscos de responsabilização criminal de empresários, administradores e organizações. Investigações envolvendo crimes tributários, financeiros, societários e contra a ordem econômica podem produzir impactos severos sobre o patrimônio, a reputação e a continuidade dos negócios.\n\nA condução dessas demandas exige compreensão simultânea dos aspectos jurídicos, financeiros e empresariais envolvidos, permitindo a construção de estratégias compatíveis com a realidade de cada operação.\n\nA prevenção de riscos e a atuação técnica em investigações e processos de natureza penal econômica tornaram-se componentes indispensáveis da gestão empresarial contemporânea.',
-    photo: '{{CLOUDINARY_FOTO_PENAL_ECONOMICO}}',
+    photo: 'https://res.cloudinary.com/dzgvyu921/image/upload/c_fill,w_800,h_500,g_auto,q_auto,f_auto/v1781911835/PROJETOS/HC-ADVOGADOS/galeria%20especialidade_penal-economico.jpg',
     services: [
       'Crimes tributários',
       'Crimes contra a ordem econômica',

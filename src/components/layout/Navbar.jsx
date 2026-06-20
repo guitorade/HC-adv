@@ -30,13 +30,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex flex-col leading-none">
-            <span className="font-playfair font-bold text-white text-lg tracking-wide">
-              HENRIQUE E CASTRO
-            </span>
-            <span className="font-inter font-medium text-gold text-xs tracking-widest uppercase text-right">
-              Advogados
-            </span>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="https://res.cloudinary.com/dzgvyu921/image/upload/c_fit,h_44,q_auto,f_auto/v1781917658/PROJETOS/HC-ADVOGADOS/branding%20logo.png"
+              alt="HC"
+              className="h-11 w-auto"
+              loading="eager"
+            />
+            <div className="hidden sm:flex flex-col leading-none">
+              <span className="font-playfair font-bold text-white text-lg tracking-wide">
+                HENRIQUE E CASTRO
+              </span>
+              <span className="font-inter font-medium text-gold text-xs tracking-widest uppercase text-right">
+                Advogados
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

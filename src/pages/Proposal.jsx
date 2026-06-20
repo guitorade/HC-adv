@@ -39,7 +39,7 @@ const plans = [
     headerColor: '#3A3A3A',
     originalPrice: 690,
     price: 290,
-    monthly: 0,
+    monthly: 59,
     monthlyAfter: 59,
     featured: false,
     waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Essencial%20(R%24290%20com%20o%20desconto%20promocional).',
@@ -64,7 +64,7 @@ const plans = [
     headerColor: '#C9A96E',
     originalPrice: 990,
     price: 590,
-    monthly: 0,
+    monthly: 79,
     monthlyAfter: 79,
     featured: true,
     waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Profissional%20(R%24590%20com%20o%20desconto%20promocional).',
@@ -96,7 +96,7 @@ const plans = [
     headerColor: '#0A1628',
     originalPrice: 1890,
     price: 1490,
-    monthly: 0,
+    monthly: 149,
     monthlyAfter: 149,
     featured: false,
     waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Completo%20(R%241.490%20com%20o%20desconto%20promocional).',
@@ -211,12 +211,20 @@ function PlanCard({ plan, index }) {
           </p>
         )}
         {/* Monthly */}
-        <p className="font-inter text-sm text-emerald-600 font-semibold mt-2">
-          + R$ 0/mês <span className="font-normal text-gray-light">no 1º ano</span>
-        </p>
-        <p className="font-inter text-xs text-gray-400 mt-1">
-          Após 1º ano: R$ {plan.monthlyAfter}/mês
-        </p>
+        {plan.monthly === 0 ? (
+          <>
+            <p className="font-inter text-sm text-emerald-600 font-semibold mt-2">
+              + R$ 0/mês <span className="font-normal text-gray-light">no 1º ano</span>
+            </p>
+            <p className="font-inter text-xs text-gray-400 mt-1">
+              Após 1º ano: R$ {plan.monthlyAfter}/mês
+            </p>
+          </>
+        ) : (
+          <p className="font-inter text-sm text-graphite font-semibold mt-2">
+            + R$ {fmt(plan.monthly)}/mês
+          </p>
+        )}
       </div>
 
       {/* Features */}
@@ -349,7 +357,7 @@ export default function Proposal() {
             <p className="font-inter text-white text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-4">
               Parabéns! Você ganhou{' '}
               <strong>R$ 400,00 de desconto na implantação</strong> do seu site.
-              Além disso, <strong>não haverá cobrança de mensalidade durante o primeiro ano.</strong>
+              Além disso, <strong>o Plano Promocional tem manutenção gratuita no primeiro ano!</strong>
             </p>
             <p className="font-inter text-white/75 text-xs italic">
               Esta promoção é exclusiva e não está disponível para outros clientes. Válida apenas para esta proposta.
@@ -439,22 +447,18 @@ export default function Proposal() {
                   </td>
                 </tr>
                 <tr className="bg-navy-light text-white">
-                  <td className="px-4 py-2.5 font-inter text-xs font-semibold">1º ano</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês</td>
-                </tr>
-                <tr className="bg-navy/80 text-white/70">
-                  <td className="px-4 py-2.5 font-inter text-xs">Após 1º ano</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs">R$ 29/mês</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs">R$ 59/mês</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs text-gold">R$ 79/mês</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs">R$ 149/mês</td>
+                  <td className="px-4 py-2.5 font-inter text-xs font-semibold">Mensalidade</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês*</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs font-bold">R$ 59/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs text-gold font-bold">R$ 79/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs font-bold">R$ 149/mês</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p className="font-inter text-gray-400 text-xs mt-3 text-center">
+            * Plano Promocional: manutenção gratuita no 1º ano, R$ 29/mês a partir do 2º ano.
+          </p>
         </motion.div>
       </section>
 
@@ -475,7 +479,7 @@ export default function Proposal() {
             conforme a necessidade do escritório.
           </p>
           <p className="font-inter text-emerald-400 text-sm font-semibold mb-8">
-            Primeiro ano de manutenção 100% gratuito em todos os planos.
+            Plano Promocional com manutenção gratuita no primeiro ano.
           </p>
           <a
             href="https://wa.me/5531984995968"
