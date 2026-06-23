@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { MessageCircle, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/sobre', label: 'Sobre Nós' },
+  { to: '/sobre', label: 'Apresentação' },
   { to: '/areas-de-atuacao', label: 'Áreas de Atuação' },
   { to: '/equipe', label: 'Equipe' },
   { to: '/blog', label: 'Publicações' },
@@ -30,21 +30,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="https://res.cloudinary.com/dzgvyu921/image/upload/c_fit,h_44,q_auto,f_auto/v1781917658/PROJETOS/HC-ADVOGADOS/branding%20logo.png"
-              alt="HC"
-              className="h-11 w-auto"
-              loading="eager"
-            />
-            <div className="hidden sm:flex flex-col leading-none">
-              <span className="font-playfair font-bold text-white text-lg tracking-wide">
-                HENRIQUE E CASTRO
-              </span>
-              <span className="font-inter font-medium text-gold text-xs tracking-widest uppercase text-right">
-                Advogados
-              </span>
-            </div>
+          <Link to="/" className="flex flex-col leading-none">
+            <span className="font-playfair font-bold text-white text-lg tracking-wide">
+              HENRIQUE E CASTRO
+            </span>
+            <span className="font-inter font-medium text-gold text-xs tracking-widest uppercase text-right">
+              Advogados
+            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -55,7 +47,7 @@ export default function Navbar() {
                 to={to}
                 end={to === '/'}
                 className={({ isActive }) =>
-                  `font-inter text-sm transition-colors duration-200 ${
+                  `font-inter text-sm uppercase tracking-wider transition-colors duration-200 ${
                     isActive ? 'text-gold' : 'text-white hover:text-gold'
                   }`
                 }
@@ -63,15 +55,6 @@ export default function Navbar() {
                 {label}
               </NavLink>
             ))}
-            <a
-              href="https://wa.me/5531984995968"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gold text-navy font-inter font-semibold text-xs uppercase tracking-wider px-4 py-2 rounded-sm hover:bg-amber-600 transition-all duration-200 ml-2"
-            >
-              <MessageCircle size={14} />
-              WhatsApp
-            </a>
           </nav>
 
           {/* Mobile Hamburger */}
@@ -105,7 +88,7 @@ export default function Navbar() {
                 end={to === '/'}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `font-inter text-base py-2 border-b border-navy-light transition-colors ${
+                  `font-inter text-base uppercase tracking-wider py-2 border-b border-navy-light transition-colors ${
                     isActive ? 'text-gold' : 'text-white hover:text-gold'
                   }`
                 }
@@ -114,15 +97,6 @@ export default function Navbar() {
               </NavLink>
             ))}
           </nav>
-          <a
-            href="https://wa.me/5531984995968"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 flex items-center justify-center gap-2 bg-gold text-navy font-inter font-semibold text-sm uppercase tracking-wider px-4 py-3 rounded-sm hover:bg-amber-600 transition-all"
-          >
-            <MessageCircle size={16} />
-            WhatsApp
-          </a>
         </div>
       </div>
     </header>

@@ -45,13 +45,6 @@ export default function Hero() {
         animate="show"
         className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto"
       >
-        <motion.p
-          variants={item}
-          className="font-inter text-gold font-semibold text-sm uppercase tracking-[0.3em] mb-6"
-        >
-          Henrique e Castro Advogados
-        </motion.p>
-
         <motion.h1
           variants={item}
           className="font-playfair font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight mb-6"

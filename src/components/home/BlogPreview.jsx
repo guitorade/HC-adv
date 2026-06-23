@@ -31,7 +31,7 @@ export default function BlogPreview() {
   const posts = blogPosts.slice(0, 3)
 
   return (
-    <section className="bg-white py-24" ref={ref}>
+    <section className="bg-white py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-14"
@@ -41,7 +41,7 @@ export default function BlogPreview() {
         >
           <SectionTitle
             eyebrow="Publicações"
-            title="Conteúdo & Artigos"
+            title="Conteúdo e Artigos"
             subtitle="Análises e orientações sobre as principais questões jurídicas do momento"
             center
           />

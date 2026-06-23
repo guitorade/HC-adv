@@ -5,6 +5,7 @@ import AboutPreview from '../components/home/AboutPreview'
 import AreasGrid from '../components/home/AreasGrid'
 import Differentials from '../components/home/Differentials'
 import TeamPreview from '../components/home/TeamPreview'
+import GoogleRating from '../components/home/GoogleRating'
 import BlogPreview from '../components/home/BlogPreview'
 import CtaSection from '../components/home/CtaSection'
 
@@ -30,6 +31,7 @@ export default function Home() {
       <AreasGrid />
       <Differentials />
       <TeamPreview />
+      <GoogleRating />
       <BlogPreview />
       <CtaSection />
     </motion.main>

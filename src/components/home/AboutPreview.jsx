@@ -9,7 +9,7 @@ export default function AboutPreview() {
   const inView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section className="bg-off-white py-24" ref={ref}>
+    <section className="bg-off-white py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           {/* Text — 60% */}
@@ -19,10 +19,7 @@ export default function AboutPreview() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <SectionTitle
-              eyebrow="Quem somos"
-              title="Assessoria jurídica estratégica e personalizada"
-            />
+            <SectionTitle eyebrow="Quem somos" />
             <p className="font-inter text-graphite text-base leading-relaxed mt-6 mb-8">
               O escritório Henrique e Castro Advogados foi estruturado para atuar além da resolução de conflitos. Assessoramos empresas, empresários, produtores rurais e pessoas físicas na proteção de patrimônios, negócios, reputações e liberdades, com atuação em todo o território nacional.
             </p>
@@ -39,6 +36,7 @@ export default function AboutPreview() {
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
           >
             <div className="relative">
+              {/* TODO: inserir logo quando aprovada */}
               <div className="aspect-[4/5] bg-navy rounded-sm overflow-hidden">
                 <div className="w-full h-full flex items-center justify-center bg-navy-light">
                   <div className="text-center">

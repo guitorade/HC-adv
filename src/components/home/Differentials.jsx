@@ -25,7 +25,7 @@ export default function Differentials() {
   const inView = useInView(ref, { once: true, amount: 0.3 })
 
   return (
-    <section className="bg-navy py-24" ref={ref}>
+    <section className="bg-navy py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-gold/30">
           {items.map(({ icon: Icon, title, desc }, i) => (

@@ -37,9 +37,9 @@ export default function About() {
   return (
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4 }}>
       <Helmet>
-        <title>Sobre Nós | Henrique e Castro Advogados</title>
+        <title>Apresentação | Henrique e Castro Advogados</title>
         <meta name="description" content="Assessoria jurídica estratégica para proteção de patrimônios, negócios, reputações e liberdades. Atuação em Direito Tributário, Empresarial, Agronegócio, Penal e Penal Econômico." />
-        <meta property="og:title" content="Sobre Nós | Henrique e Castro Advogados" />
+        <meta property="og:title" content="Apresentação | Henrique e Castro Advogados" />
         <meta property="og:description" content="Assessoria jurídica estratégica para proteção de patrimônios, negócios, reputações e liberdades." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://henriquecastro.adv.br/sobre" />
@@ -53,14 +53,13 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold mb-3">Quem somos</p>
-            <h1 className="font-playfair font-bold text-white text-4xl md:text-5xl">Sobre Nós</h1>
+            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold">Quem somos</p>
           </motion.div>
         </div>
       </section>
 
       {/* Texto principal */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle eyebrow="O Escritório" title="Henrique e Castro Advogados" />
           <div className="mt-8 space-y-6 font-inter text-graphite text-base leading-relaxed">
@@ -87,7 +86,7 @@ export default function About() {
       </section>
 
       {/* Pilares */}
-      <section className="bg-off-white py-20">
+      <section className="bg-off-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <SectionTitle title="Nossos Pilares" center />
@@ -114,10 +113,10 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-24">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="font-playfair font-bold text-black text-3xl mb-6">Fale com nossa equipe</h2>
-          <p className="font-inter text-gray-light mb-8">
+          <p className="font-inter text-gray-light mb-8 md:whitespace-nowrap">
             Estamos prontos para atender você e encontrar a melhor solução jurídica para o seu caso.
           </p>
           <Button to="/contato" variant="primary" size="lg">

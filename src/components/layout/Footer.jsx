@@ -19,12 +19,12 @@ export default function Footer() {
           {/* Col 1 — Logo + tagline */}
           <div>
             <div className="mb-4">
-              <img
-                src="https://res.cloudinary.com/dzgvyu921/image/upload/c_fit,h_80,q_auto,f_auto/v1781917659/PROJETOS/HC-ADVOGADOS/branding%20logo-nome.png"
-                alt="Henrique e Castro Advogados"
-                className="h-20 w-auto"
-                loading="lazy"
-              />
+              <p className="font-playfair font-bold text-lg text-white tracking-wide">
+                HENRIQUE E CASTRO
+              </p>
+              <p className="font-inter font-medium text-gold text-xs tracking-widest uppercase">
+                Advogados
+              </p>
             </div>
             <p className="font-inter text-sm text-gray-400 leading-relaxed">
               Proteção de patrimônios, negócios, reputações e liberdades em todo o território nacional.
@@ -39,7 +39,7 @@ export default function Footer() {
             <nav className="flex flex-col gap-2">
               {[
                 { to: '/', label: 'Home' },
-                { to: '/sobre', label: 'Sobre Nós' },
+                { to: '/sobre', label: 'Apresentação' },
                 { to: '/areas-de-atuacao', label: 'Áreas de Atuação' },
                 { to: '/equipe', label: 'Equipe' },
                 { to: '/blog', label: 'Publicações' },

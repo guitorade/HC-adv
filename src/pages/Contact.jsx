@@ -68,14 +68,13 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold mb-3">Fale conosco</p>
-            <h1 className="font-playfair font-bold text-white text-4xl md:text-5xl">Contato</h1>
+            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold">Fale conosco</p>
           </motion.div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Left — Info */}

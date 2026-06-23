@@ -10,7 +10,7 @@ export default function TeamPreview() {
   const inView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section className="bg-off-white py-24" ref={ref}>
+    <section className="bg-off-white py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-14"
@@ -35,11 +35,11 @@ export default function TeamPreview() {
                 <img
                   src={member.photo}
                   alt={member.name}
-                  className="w-20 h-20 shrink-0 rounded-full object-cover border-2 border-gold/30"
+                  className="w-32 h-32 shrink-0 rounded-sm object-cover border-2 border-gold/30"
                   loading="lazy"
                 />
               ) : (
-                <div className="w-20 h-20 shrink-0 rounded-full bg-navy-light flex items-center justify-center">
+                <div className="w-32 h-32 shrink-0 rounded-sm bg-navy-light flex items-center justify-center">
                   <User size={36} className="text-gold/50" />
                 </div>
               )}
