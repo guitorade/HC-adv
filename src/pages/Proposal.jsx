@@ -12,7 +12,7 @@ const plans = [
     priceLabel: 'GRÁTIS',
     isFree: true,
     monthly: 0,
-    monthlyAfter: 29,
+    monthlyAfter: 59,
     featured: false,
     waMessage: 'Ol%C3%A1!%20Quero%20ativar%20meu%20site%20promocional%20gratuito%20que%20ganhei!',
     features: [
@@ -30,6 +30,7 @@ const plans = [
       'Hospedagem',
       'Suporte técnico básico',
       '1 atualização de conteúdo por mês',
+      '1 rodada de revisão por mês',
     ],
     note: 'Presente exclusivo. Seu escritório na internet sem nenhum custo no primeiro ano.',
   },
@@ -38,12 +39,12 @@ const plans = [
     name: 'Essencial',
     badge: 'Cartão de Visita Digital',
     headerColor: '#3A3A3A',
-    originalPrice: 690,
-    price: 290,
-    monthly: 59,
-    monthlyAfter: 59,
+    originalPrice: 990,
+    price: 590,
+    monthly: 99,
+    monthlyAfter: 99,
     featured: false,
-    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Essencial%20(R%24290%20com%20o%20desconto%20promocional).',
+    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Essencial%20(R%24590%20com%20o%20desconto%20promocional).',
     features: [
       'Tudo do Promocional',
       'Design mais refinado com animações básicas',
@@ -55,6 +56,7 @@ const plans = [
       'Hospedagem',
       'Suporte técnico',
       'Até 2 atualizações de conteúdo por mês',
+      '2 rodadas de revisão por mês',
     ],
     note: 'Para quem quer um visual mais profissional mantendo o investimento enxuto.',
   },
@@ -63,12 +65,12 @@ const plans = [
     name: 'Profissional',
     badge: 'RECOMENDADO',
     headerColor: '#C9A96E',
-    originalPrice: 990,
-    price: 590,
-    monthly: 79,
-    monthlyAfter: 79,
+    originalPrice: 1490,
+    price: 1090,
+    monthly: 149,
+    monthlyAfter: 149,
     featured: true,
-    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Profissional%20(R%24590%20com%20o%20desconto%20promocional).',
+    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Profissional%20(R%241.090%20com%20o%20desconto%20promocional).',
     features: [
       'Tudo do Essencial',
       'Site completo com 6 páginas dedicadas',
@@ -88,6 +90,7 @@ const plans = [
       'Relatório mensal de visitas e métricas',
       'Monitoramento de performance',
       'Domínio incluso',
+      '4 rodadas de revisão por mês',
     ],
     note: 'O equilíbrio perfeito. Presença completa, profissional e pronta para crescer.',
   },
@@ -96,12 +99,12 @@ const plans = [
     name: 'Completo',
     badge: 'Gestão Digital',
     headerColor: '#0A1628',
-    originalPrice: 1890,
-    price: 1490,
-    monthly: 149,
-    monthlyAfter: 149,
+    originalPrice: 2490,
+    price: 2090,
+    monthly: 249,
+    monthlyAfter: 249,
     featured: false,
-    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Completo%20(R%241.490%20com%20o%20desconto%20promocional).',
+    waMessage: 'Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Completo%20(R%242.090%20com%20o%20desconto%20promocional).',
     features: [
       'Tudo do Profissional',
       'Área do Cliente com login seguro',
@@ -124,6 +127,7 @@ const plans = [
       'Backup semanal',
       'Otimização contínua de SEO',
       'Domínio incluso',
+      '4 rodadas de revisão por mês',
     ],
     note: 'Para quem quer o site como ferramenta de gestão completa do escritório.',
   },
@@ -150,6 +154,7 @@ const tableRows = [
   { feature: 'FAQ dinâmico', promo: false, essencial: false, profissional: false, completo: true },
   { feature: 'Newsletter', promo: false, essencial: false, profissional: false, completo: true },
   { feature: 'Painel administrativo', promo: false, essencial: false, profissional: false, completo: true },
+  { feature: 'Rodadas de revisão/mês', promo: '1', essencial: '2', profissional: '4', completo: '4' },
 ]
 
 function fmt(n) {
@@ -443,30 +448,30 @@ export default function Proposal() {
                     <span className="font-bold text-gold">GRÁTIS</span>
                   </td>
                   <td className="text-center px-3 py-3 text-xs">
-                    <span className="line-through text-white/50 block">R$ 690</span>
-                    <span className="font-bold">R$ 290</span>
+                    <span className="line-through text-white/50 block">R$ 990</span>
+                    <span className="font-bold">R$ 590</span>
                   </td>
                   <td className="text-center px-3 py-3 text-xs bg-gold/10">
-                    <span className="line-through text-white/50 block">R$ 990</span>
-                    <span className="font-bold text-gold">R$ 590</span>
+                    <span className="line-through text-white/50 block">R$ 1.490</span>
+                    <span className="font-bold text-gold">R$ 1.090</span>
                   </td>
                   <td className="text-center px-3 py-3 text-xs">
-                    <span className="line-through text-white/50 block">R$ 1.890</span>
-                    <span className="font-bold">R$ 1.490</span>
+                    <span className="line-through text-white/50 block">R$ 2.490</span>
+                    <span className="font-bold">R$ 2.090</span>
                   </td>
                 </tr>
                 <tr className="bg-navy-light text-white">
                   <td className="px-4 py-2.5 font-inter text-xs font-semibold">Mensalidade</td>
                   <td className="text-center px-3 py-2.5 font-inter text-xs text-emerald-400 font-bold">R$ 0/mês*</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs font-bold">R$ 59/mês</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs text-gold font-bold">R$ 79/mês</td>
-                  <td className="text-center px-3 py-2.5 font-inter text-xs font-bold">R$ 149/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs font-bold">R$ 99/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs text-gold font-bold">R$ 149/mês</td>
+                  <td className="text-center px-3 py-2.5 font-inter text-xs font-bold">R$ 249/mês</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="font-inter text-gray-400 text-xs mt-3 text-center">
-            * Plano Promocional: manutenção gratuita no 1º ano, R$ 29/mês a partir do 2º ano.
+            * Plano Promocional: manutenção gratuita no 1º ano, R$ 59/mês a partir do 2º ano.
           </p>
         </motion.div>
       </section>
