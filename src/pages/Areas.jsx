@@ -29,6 +29,7 @@ export default function Areas() {
       <section className="bg-navy pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -41,12 +42,12 @@ export default function Areas() {
       {/* Grid de cards com foto */}
       <section className="bg-white py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {areas.map((area, i) => (
               <motion.button
                 key={area.id}
                 onClick={() => setOpenIndex(i)}
-                className={`relative group overflow-hidden rounded-sm h-64 w-full max-w-sm ${
+                className={`relative group overflow-hidden rounded-sm h-72 w-full ${
                   openIndex === i ? 'ring-2 ring-gold' : ''
                 }`}
                 initial={{ opacity: 0, y: 30 }}

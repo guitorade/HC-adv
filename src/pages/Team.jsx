@@ -45,6 +45,7 @@ export default function Team() {
       <section className="bg-navy pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -56,8 +57,8 @@ export default function Team() {
 
       {/* Team members */}
       <section className="bg-white py-28">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {team.map((member, i) => (
               <motion.div
                 key={member.id}
@@ -72,11 +73,11 @@ export default function Team() {
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="w-full h-80 object-cover object-top"
+                    className="w-full h-96 object-cover object-top"
                     loading="lazy"
                   />
                 ) : (
-                  <div className="w-full h-80 bg-navy-light flex items-center justify-center">
+                  <div className="w-full h-96 bg-navy-light flex items-center justify-center">
                     <User size={80} className="text-gold/40" />
                   </div>
                 )}
