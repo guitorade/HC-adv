@@ -32,7 +32,7 @@ export default function BlogPreview() {
 
   return (
     <section className="bg-white py-28" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-14"
           initial={{ opacity: 0, y: 30 }}

@@ -10,7 +10,7 @@ export default function AboutPreview() {
 
   return (
     <section className="bg-off-white py-28" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           {/* Text — 60% */}
           <motion.div

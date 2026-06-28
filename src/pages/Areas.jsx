@@ -26,23 +26,29 @@ export default function Areas() {
       </Helmet>
 
       {/* Mini Hero */}
-      <section className="bg-navy pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-navy pt-32 pb-20 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=1920')" }}
+        />
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold">Especialidades</p>
+            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold mb-3">Especialidades</p>
+            <h2 className="font-playfair font-bold text-white text-3xl md:text-4xl">Atuação jurídica especializada</h2>
           </motion.div>
         </div>
       </section>
 
       {/* Grid de cards com foto */}
       <section className="bg-white py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
             {areas.map((area, i) => (
               <motion.button
                 key={area.id}
@@ -68,7 +74,9 @@ export default function Areas() {
               </motion.button>
             ))}
           </div>
+        </div>
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Painel de detalhes */}
           <AnimatePresence mode="wait">
             {openIndex !== null && (

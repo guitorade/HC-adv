@@ -1,11 +1,27 @@
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import Button from '../ui/Button'
 
 const VIDEO_URL = 'https://videos.pexels.com/video-files/32926874/14033092_2560_1440_30fps.mp4'
 const POSTER_URL = 'https://images.pexels.com/videos/32926874/above-the-city-building-cityscape-green-32926874.jpeg?auto=compress&cs=tinysrgb&w=1920'
 
+const headlines = [
+  'Segurança para decisões relevantes.',
+  'Proteção estratégica para seu patrimônio.',
+  'Excelência jurídica com proximidade.',
+]
+
 export default function Hero() {
+  const [headlineIndex, setHeadlineIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeadlineIndex((i) => (i + 1) % headlines.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [])
+
   const stagger = {
     hidden: {},
     show: { transition: { staggerChildren: 0.2 } },
@@ -45,12 +61,20 @@ export default function Hero() {
         animate="show"
         className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto"
       >
-        <motion.h1
-          variants={item}
-          className="font-playfair font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight mb-6"
-        >
-          Segurança para decisões relevantes.
-        </motion.h1>
+        <motion.div variants={item} className="min-h-[1.2em] md:min-h-[1.3em] lg:min-h-[1.4em] mb-6">
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={headlineIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="font-playfair font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight"
+            >
+              {headlines[headlineIndex]}
+            </motion.h1>
+          </AnimatePresence>
+        </motion.div>
 
         <motion.p
           variants={item}

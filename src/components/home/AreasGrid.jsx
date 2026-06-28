@@ -19,19 +19,21 @@ export default function AreasGrid() {
         >
           <SectionTitle eyebrow="Especialidades" center />
         </motion.div>
+      </div>
 
-        <div className="flex flex-wrap justify-center gap-4">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap justify-center gap-3">
           {areas.map((area, i) => (
             <motion.div
               key={area.id}
-              className="w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+              className="w-full sm:w-[calc(50%-6px)] lg:w-[calc(33.333%-8px)] xl:w-[calc(20%-10px)]"
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
               <Link
                 to="/areas-de-atuacao"
-                className="relative group block overflow-hidden rounded-sm h-64"
+                className="relative group block overflow-hidden rounded-sm h-80"
               >
                 <img
                   src={area.photo}

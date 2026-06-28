@@ -61,15 +61,21 @@ export default function Contact() {
       </Helmet>
 
       {/* Mini Hero */}
-      <section className="bg-navy pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-navy pt-32 pb-20 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920')" }}
+        />
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold">Fale conosco</p>
+            <p className="font-inter text-gold text-sm uppercase tracking-widest font-semibold mb-3">Fale conosco</p>
+            <h2 className="font-playfair font-bold text-white text-3xl md:text-4xl">Entre em contato</h2>
           </motion.div>
         </div>
       </section>

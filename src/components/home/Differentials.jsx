@@ -26,7 +26,7 @@ export default function Differentials() {
 
   return (
     <section className="bg-navy py-28" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-gold/30">
           {items.map(({ icon: Icon, title, desc }, i) => (
             <motion.div

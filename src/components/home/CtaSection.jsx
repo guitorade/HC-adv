@@ -10,7 +10,7 @@ export default function CtaSection() {
     <section className="bg-navy py-28 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#152238_0%,_#0A1628_70%)]" />
       <motion.div
-        className="relative z-10 max-w-3xl mx-auto text-center px-4 sm:px-6"
+        className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6"
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7 }}
