@@ -277,7 +277,7 @@ function PlanCard({ plan, index }) {
 
         <div>
           <p className="font-inter font-semibold text-black text-xs uppercase tracking-wider mb-2.5">
-            Manutenção {plan.isFree ? '(após 1º ano)' : '(após 1º ano)'}
+            Manutenção {plan.isFree ? '(após 1º ano)' : 'mensal'}
           </p>
           <ul className="space-y-1.5">
             {plan.maintenance.map((m) => (
